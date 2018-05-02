@@ -1,0 +1,29 @@
+无法打印出shared library的函数名： shared library编译时未包含-g选项。
+
+openresty使用gperftools
+1. 重编译libdiviner.so，增加-g选项。
+2. 重编译nginx，增加对libdiviner.so的依赖（方法是进入openresty的nginx-1.2.8.2， objs/Makefile增加 ）
+./configure --prefix=/export/servers/openresty --with-luajit	（编译选项）
+3. 修改nginx.conf，将worker_processor=1， 增加配置
+daemon off;
+master_process off;
+4. 运行nginx
+sudo LD_PRELOAD=/home/admin/zml/usr/local/lib/libprofiler.so.0 CPUPROFILE=./nginx.prof LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH   /export/servers/openresty/nginx/sbin/nginx -c /export/servers/openresty/nginx/conf/nginx.conf
+5. 停止nginx
+sudo /export/servers/openresty/nginx/sbin/nginx -s stop
+6. 针对生成的nginx.prof
+ pprof --text ./main ./main.prof > a.text
+ 
+使用heapprofile
+生成：
+env HEAPPROFILE=./a.heap ./a.out
+查看结果：
+pprof --text ./a.out ./a.heap.0001.heap > a.txt
+注意：若代码有内存泄漏，需先解决内存泄漏问题，才会生成相关代码。
+
+使用heapprofile检查内存泄漏
+env HEAPCHECK=normal ./a.out
+
+
+
+env  LD_PRELOAD=/home/zhangmaolin/usr/local/lib/libtcmalloc.so HEAPPROFILE=./nginx.heap LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH   /export/servers/openresty/nginx/sbin/nginx -c /export/servers/openresty/nginx/conf/nginx.conf

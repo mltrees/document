@@ -1,0 +1,8 @@
+ init_by_lua_file 的引用代码在每次请求都会被执行的问题:
+    当你通过 lua_code_cache off 配置指令禁用 Lua 代码缓存时，init_by_lua* 
+程序会在每请求的开始执行。这是因为在此种模式下，每个请求都会创建一个独立的 Lua VM 实例，所以必须总是需要在新的 Lua VM 上执行 
+init_by_lua 以确保每个 VM 都正确地得到初始化。
+
+access log的配置 
+
+

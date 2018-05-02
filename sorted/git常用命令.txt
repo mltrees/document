@@ -1,0 +1,129 @@
+git blame filename.c 查看某一文件每一行的修改时间
+git log --pretty=oneline filename.c	某一文件在各个版本的修改 
+git show 5aa1be6674ecf6c36a579521708bf6e5efb6795f filename.c	某一版本文件修改情况
+git checkout -- filename   回退某个文件夹
+git branch -r  展示该Git库下的所有branch
+git branch <name>	创建分支
+git checkout <name>	切换分支
+git checkout -b master_3.0  创建并转换到master_3.0分支
+$ git checkout - -ours xxx/A.java // 抛弃甲的版本，保留乙的
+$ git checkout - -theirs xxx/A.java // 抛弃乙的版本，完全采用甲的
+git reset --hard FETCH_HEAD，FETCH_HEAD表示上一次成功git pull之后形成的commit点(强行回退到HEAD点，放弃本地所有修改，可在git pull 有冲突时使用)。然后git pull.
+在commit之前取消git add：git rm -r --cached .（对应git add 命令 git add .）
+增加commit的注释：git commit --amend
+git log --stat 显示每次更新的文件修改统计信息。
+git mergetool	merge冲突的文件
+git branch  ：查看本地分支
+git checkout -b temp	将当前目录命名为temp分支
+git checkout master	切换至master分支
+git reflog		查看本地提交的所有log
+git clean -f 		工作目录中移除非track的文件
+git reset --hard HEAD^	版本回退到上一版本（若是HEAD^^，则回退上两个版本）
+git diff HEAD -- readme.txt查看readme.txt文件在工作区和版本库的区别
+git reset HEAD file	把暂存区的修改撤消掉
+git rm			删除一个文件
+git merge dev		将dev分支合并到master分支
+git branch -d dev	删除dev分支
+git stash		暂存正在进行的工作
+git stash list		列出正在进行的工作
+git stash pop		恢复git stash内容，并将stash里的内容删除
+git remote		查看远程分支信息
+git blame <filename>	查看某文件最后修改提交的日子
+git log -n 1 --stat	查看最近一次提交所有更改过的文件
+git diff HEAD^ -- filename 查看文件与上一版本的修改	
+
+将review的内容拉下来：
+$ git fetch ssh://zhangmaolin@legit.letv.cn:29418/search_and_rec refs/changes/64/6964/5 && git checkout FETCH_HEAD
+代码reset到最新版
+git reset --hard origin/master
+git clean -dxf 删除本地所有未跟踪的文件
+切换到自己分支，并执行：git merge master
+将master分支内容合并进自己分支。可使用此命令实时更新自己新建分支的代码。
+
+windows下使用git
+1. 打开git bash
+2. 输入export GIT_SSH_COMMAND='ssh -o KexAlgorithms=+diffie-hellman-group1-sha1'
+
+	注：若不输入，会报错
+Unable to negotiate with 10.140.45.26: no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+3. git clone ssh://zhangmaolin@legit.letv.cn:29418/search_and_rec
+查看指定文件修改历史：git log --pretty=oneline 文件名
+
+git提交错误的review之后想恢复上一版本方法
+gitrest 上一版本； git ca； git review
+jd 版本提交
+获取远程分支origin/zml-dev内容：git checkout -b dev origin/zml-dev
+git push origin test:master         // 提交本地test分支作为远程的master分支
+删除origin/zml-dev： git push --delete origin zml-dev
+将本地的删除操作上传 git add --all .
+git查看远程网址:git remote -v
+git update本地fork出来的分支：
+    git remote add upstream https://github.com/whoever/whatever.git
+    git fetch upstream
+    git checkout master
+    git rebase upstream/master
+git 合并dev分支到master中
+    git checkout master
+    git merge dev
+git ignore .gitignore itself:git rm --cache .gitignore
+git 无法ignore在仓库中己存在的文件。
+git add后的撤消：git reset HEAD <file>
+将之前提交的几个commit合并
+git rebase -i origin/master
+解决报错： Git push remote rejected {change ### closed}
+git rebase -i origin/master
+git 和上一版本比较
+git diff HEAD^ HEAD -- filename
+若git ca后想重新git ci，则可以看git log，找到最近的修改后，git reset --soft “版本号”，然后重新git add及git ci
+当碰上本地代码与远程不一致，强制add代码：git push origin install-package-new:install-package-new2 -f
+
+放弃本地修改，使用远端代码：
+git reset first_Name.txt
+git checkout first_Name.txt
+
+查看某个文件某次的修改很简单
+git show 某次的提交哈希值 文件名
+git diff 某次的提交哈希值^! （例如：git diff 8d37d8e769e13c404dbc27f3d94c11b78f83cca7^!）
+查看某一文件的所有修改历史： git log --pretty=oneline 文件名
+git将文件返回至某一版本：
+git checkout df3db72ae2147c41a3598c7363ed18b53564eeff -- token_group_a.conf
+本地修改同步master的最新代码：先切换到master分支，fetch 后rebase，然后切到修改分支 git merge master
+查看远程仓库的分支：git remote show origin
+当merge分支时，解决 You are in the middle of a merge -- cannot amend.方法：rm .git/MERGE_HEAD，然后继续git ca即可。
+查看暂存文件与上一版本的差异：git d --cached filename
+修改本地branch：git branch -m <oldname> <newname>， git branch -m <newname> (修改当前branch名称)
+将指定分支合并进当前分支：git merge <branch>
+git ca后的撤消：git reset HEAD~
+gerrit回退到某一历史版本的方法：git fetch到想要回退的历史版本，之后git review -f
+git删除远程仓库文件：git rm -r -n --cached testzk/.idea/* （只列表，不删除），git rm -r --cached testzk/.idea/*（删除），git push（提交删除）
+
+同一机器配置多个gerrit帐户
+3. 如果多个用户共用同一台launcher的同一账号，请忽略步骤1，2，参考以下方法配置ssh key： 堡垒机公共账号git使用方法
+a. 创建自己的工作目录
+mkdir /export/home/<my-erp>
+b. 创建新的ssh key
+mkdir /export/home/<my-erp>/.ssh
+ssh-keygen -t rsa -f /export/home/<my-erp>/.ssh/id_rsa -q
+c. gerrit上增加key:
+cat /export/home/<my-erp>/.ssh/id_rsa # gerrit右上角用户名 -> settings -> 左侧SSH Public Keys -> Add Key
+# 把内容粘贴在输入框里，然后点Add
+d. 修改账户共用的ssh config，增加自己账号的设置（注意加在文件末尾，不要删除别人的设置）
+vim ~/.ssh/config
+~/.ssh/config 中，增加如下配置
+Host gerrit.jd.com
+    HostName gerrit.jd.com
+    User <my-erp>
+    IdentityFile /export/home/<my-erp>/.ssh/id_rsa
+    IdentitiesOnly yes
+附件是一个 ~/.ssh/config 文件的例子：config
+
+revert回上一版本代码: git revert commitid（如果上一版本是两个分支合并，需要git revert commitid -m 1，代表revert回master分支）
+gitk： 图形化客户端
+查看某次commit都修改了哪些文件：git diff cc7434a19c6c30e5a6f779a77fba91544577d6ae^! --name-only
+
+
+

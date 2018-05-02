@@ -1,0 +1,50 @@
+编译环境:centos6.5安装时是完全安装，用yum install
+libevent-dev安装了libevent,并编译安装了libevent-2.0.22-stable.tar.gz
+
+1. 编译前需安装libevent，否则NoBlocking模式无法运行
+2. 编译选项如下：./configure --with-lua=no --with-erlang=no，若无后两个，编译无法完成
+3. thrift-0.9.3编译有问题，使用thrift-0.9.0编译ok
+
+thrift-0.9.3编译问题解决
+thrift-0.9.3会报bison版本太低，此时下载bison-2.5.tar.gz安装即可
+
+centos6.5 源码编译thrift-0.9.3，会报错：undefine reference to
+'evutil_make_socket_closeonexec'，原因是曾经有过yum install
+libevent及libevnet-dev，解决方法是sudo yum remove
+libevent，并源码安装libevent(libevent-2.0.22-stable.tar.gz)后，指定libevent目录编译生成thrift
+
+
+编译选项：
+./configure --prefix=/home/zhangmaolin/usr/local/ --with-libevnt=/home/zhangmaolin/usr/local/ --with-boost=/home/zhangmaolin/usr/local/ --with-lua=no --with-erlang=no
+
+thrift-0.9.2无法生成libthrift.a问题解决
+下载openssl（openssl-1.1.0e.tar.gz），并编译安装
+编译选项：
+./configure --prefix=/home/zhangmaolin/usr/local/thrift_0.9.2/ --with-php=no --with-boost=/home/zhangmaolin/usr/local/ --with-lua=no --with-erlang=no --with-libevent=/home/zhangmaolin/usr/local/ --with-ssl=/home/zhangmaolin/usr/local/openssl --with-java=no
+会出现thrift-0.9.2只能编译，但无法安装的问题，具体原因暂不清楚，暂时直接使用源码路径调试
+
+thrift-0.9.3会报bison版本太低，此时下载bison-2.5.tar.gz安装即可
+
+centos6.5 源码编译thrift-0.9.3，会报错：undefine reference to
+'evutil_make_socket_closeonexec'，原因是曾经有过yum install
+libevent及libevnet-dev，解决方法是sudo yum remove
+libevent，并源码安装libevent(libevent-2.0.22-stable.tar.gz)后，指定libevent目录编译生成thrift
+
+
+编译选项：
+./configure --prefix=/home/zhangmaolin/usr/local/ --with-libevnt=/home/zhangmaolin/usr/local/ --with-boost=/home/zhangmaolin/usr/local/ --with-lua=no --with-erlang=no
+
+
+thrift生成cpp命令：
+thrift 
+
+thrift-0.10.0编译问题解决
+thrift-0.10.0使用0.9.3编译选项编译后，会发生错误
+解决方式，是在原生gcc4.4.7环境下执行configure，再load gcc-4.9.2的环境
+
+thrift使用：
+thrift -r --gen cpp clerk.thrift
+
+
+protobuf使用：
+protoc --proto_path=. --cpp_out=generatedcpp/ ps/*.proto

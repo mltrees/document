@@ -1,0 +1,10 @@
+指定path
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr . && make all install
+
+cmake .. -DCMAKE_INSTALL_PREFIX=/home/zhangmaolin/usr/local/ -DCMAKE_INCLUDE_PATH=/home/zhangmaolin/usr/local/include/ -DCMAKE_LIBRARY_PATH=/home/zhangmaolin/usr/local/lib
+-DCMAKE_INCLUDE_PATH:include path
+-DCMAKE_LIBRARY_PATH:library path
+
+内部设置路径：
+SET(CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "C:/win32libs/boost")
+SET(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "C:/win32libs/boost/lib")

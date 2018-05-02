@@ -1,0 +1,181 @@
+sz 从linux传至windows，从windows操作
+rz 从window上传至linux，在linux操作
+sudo chown zhangmaolin:zhangmaolin share, 将share文件夹所有者修改为zhangmaolin，用户组修改为zhangmaolin
+
+
+解决Redirect Network(New newthop: 10.58.94.1)
+arp -f
+arp -a
+
+nc传送文件
+目的主机监听
+nc -l 监听端口<未使用端口>  > 要接收的文件名
+nc -l 4444 > cache.tar.gz
+ 
+源主机发起请求
+nc  目的主机ip    目的端口 < 要发送的文件
+nc  192.168.0.85  4444 < /root/cache.tar.gz
+
+svn up --force	忽略己存在文件，强制更新。
+
+linux find : -o 连接两个不同的条件（两个条件满足其一即可）, -not 对条件取反的,
+      -a 连接两个不同的条件（两个条件必须同时满足）, find -depth
+      递归查找本目录所有文件 -type f 普通文件
+查找可执行文件：find . -name nginx -a -perm /u+x
+lsof -i:8407	查看端口8407是否被占用
+tree        以树形显示目录结构
+
+
+查看系统页大小：getconf PAGESIZE
+查看端口占用情况：netstat -apn
+shell内置参数
+linux系统除了提供位置参数还提供内置参数，内置参数如下：　
+        $# ----传递给程序的总的参数数目 　
+   　  $? ----上一个代码或者shell程序在shell中退出的情况，如果正常退出则返回0，反之为非0值。 　　
+         $* ----传递给程序的所有参数组成的字符串。 　　
+        $n ----表示第几个参数，$1 表示第一个参数，$2 表示第二个参数 ... 　　$0 ----当前程序的名称 　　
+         $@----以"参数1" "参数2" ... 形式保存所有参数 　　
+         $$ ----本程序的(进程ID号)PID 　　
+         $! ----上一个命令的PID
+
+PKG_CONFIG_PATH	: pkg-config search path
+查看己运行程序具体位置：ll /proc/45113/ 其中45113为程序pid，使用是替换即可
+查看程序启动时间：ps -A -opid,stime,etime,args
+make 输出log
+make >&log
+the & after the > tells the shell to dump both stdout and stderr to the log. This can also be used with pipes.
+使用astyle格式化文档
+astyle --style=google luajit_api.cc
+查看端口是否可访问：telnet 192.168.10.101 80 ：查看80端口是否可访问
+docker常用命令
+
+
+查看本地己有的docker：docker ps -a
+创建docker：run -it -d -v /home/docker/tmp/:/home/tmp 56c8e559e99b
+进行docker：docker exec -it 2c9946f81f05 /bin/bash
+在docker内退出docker：ctrl+d
+删除所有container：docker rm `docker ps --no-trunc -aq`
+
+查看linux所有运行的java程序：jps -ml
+
+ump后端服务的搭建：
+下载或人传递：ump2_agent
+修改config.json:
+	"UDS_PATH"为socket的地址，与代码内monitor.h中的UNIX_DOMAIN_SERVER对应
+	LOG_FILE为写log的地址
+
+自己压测命令：
+安装ab：yum -y install httpd-tools
+ 
+ 查看内存：ps -e -o 'pid,comm,args,pcpu,rsz,vsz,stime,user,uid'
+
+查看.so或可执行文件内的详细内容：
+objdump -TC lib.so
+查看程序的动态依赖库：ldd a.out
+查看linux发行版：cat /etc/issue, lsb_release -a
+
+gperf-tools中cpp-profile的命令： LD_PRELOAD=/home/zhangmaolin/usr/local/lib/libprofiler.so.0 CPUPROFILE=./main.prof ./main
+
+查看所有进程的资源消耗情况：top -bn1
+查看使用inotify的进程：for foo in /proc/*/fd/*; do readlink -f $foo; done | grep inotify | sort | uniq -c | sort -nr
+查看本地共享内存：ipcs -m，
+删除本地共享内存：ipcrm -M 0x000004d2（0x000004d2为ipcs -m后共享内存key的值,或man一下ipcrm，提示很清楚）
+sem_open的文名sem.file存放在/dev/shm目录下。
+修改共享内存最大值为2G：echo "2147483648" > /proc/sys/kernel/shmmax
+使共享内存修改永久生效：echo "kernel.shmmax=2147483648" >> /etc/sysctl.conf
+打印进程号：ps -ef | grep nginx | awk ' {print $2}'
+linux查看进程启动时间： ps -p PID -o lstart
+查看inotify的值：cat /proc/sys/fs/inotify/max_user_watches
+打印指定进程的进程号：ps -ef | grep nginx | awk {'print$2'}
+修改inofity的最大值： echo 1280 > /proc/sys/fs/inotify/max_user_instances
+永久修改：echo "fs.inotify.max_user_instances" = 1280 >> /etc/sysctl.conf
+查看tcp接收缓冲区大小：cat /proc/sys/net/ipv4/tcp_rmem (for read) 三个返回参数分别为最小、默认和最大
+查看tcp发送缓冲区大小：cat /proc/sys/net/ipv4/tcp_wmem (for write) 三个返回参数分别为最小、默认和最大
+定时任务配置：
+启动： /etc/init.d/cron start
+配置方法: crontab -e 后编辑打开文件，每1分钟启动一次：*/1 * * * * /usr/bin/python2.7 /home/zhangmaolin/test/monitor.py
+
+本地建立ssh映射： ssh -L 2224:10.187.104.147:22 zhangmaolin7@jps.jd.com -p 80
+scp远程拷贝： scp -P 2222 /f/src/prediction_service/src/prediction_service admin@localhost:/home/admin/zhangmaolin/prediction_service
+
+ubuntu挂载samba：sudo mount -t cifs //192.168.100.101/zhangmaolin /home/zhangmaolin/smb/ -o username=zhangmaolin,password=123456,gid=zhangmaolin,uid=zhangmaolin
+查看使用挂载点的程序： fuser -m /media/cdrom0
+
+valgrind参数：valgrind --log-file=val.log --leak-check=full ./prediction_service config/server.conf
+查看进程使用内存命令： pmap
+
+vim molokai配色：https://github.com/tomasr/molokai
+查看java版本：java -version
+java命令行运行：java -cp .;myClass.jar packname.mainclassname  
+
+kill -19 pid 停止指定pid的进程运行（进程在，但不运行）
+kill -18 pid 恢复指定pid的进行
+
+nohup ./prediction_service config/server.conf 1>log.txt 2>&1 &
+
+上线的git log命令format：git log --pretty=format:"%h: %an: %s"
+
+
+ssh -L 2223:10.189.46.16:22 zhangmaolin7@jps.jd.com -p 80
+ssh -L 2224:10.187.104.147:22 zhangmaolin7@jps.jd.com -p 80
+打印文件全路径：readlink -f db.conf
+
+使用ram disk
+sudo mkdir -p /media/ramdisk
+sudo mount -t tmpfs -o size=2048M tmpfs /media/ramdisk
+sudo umount /media/ramdisk
+
+auto mounting the ramdisk
+vim /etc/fstab
+none /media/ramdisk tmpfs nodev,nosuid,noexec,nodiratime,size=2048M 0 0
+
+查看进程所占内存： pmap -d pid
+查看系统运行的所有线程： ps -xH
+查看某一进程的线程： ps -mq PID
+查看线程所点资源：top -H
+
+export LD_PRELOAD=${pwd}libb.so:${LD_PRELOAD}  这个路径指定的so将在所有的so之前加载，并且符号会覆盖后面加载的so文件中的符号。如果可执行文件的权限不合适（SID），这个变量会被忽略。 
+
+清屏： ctrl + l
+
+
+screen命令：
+//Creation:
+screen -S some_name proc
+// Kill detached session
+screen -S some_name -X quit
+
+tmux命令：
+Ctrl+b后
+ ？列出所有快捷键
+ c 新新窗口
+ x 关闭当前面板
+ d detach窗口
+ D 选择要脱离的窗口
+ ! 将当前面板置于新窗口
+ ” 	将当前面板平分为上下两块
+% 	将当前面板平分为左右两块
+, 	重命名当前窗口；这样便于识别
+. 	修改当前窗口编号；相当于窗口重新排序
+s 	选择并切换会话；在同时开启了多个会话时使用
+： 输入命令：kill-server 停止tmux
+快捷键操作
+ctrl+D 退出
+Ctrl+o 顺时针旋转面板
+
+加载个性化的配置文件 source-file ~/.tmux.conf
+
+命令退出窗口：tmux kill-window -t 94-src
+重命名窗口： tmux rename-session -t first newname
+
+ 
+
+
+
+
+
+
+
+
+
+

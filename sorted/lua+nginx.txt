@@ -1,0 +1,16 @@
+关闭lua的cache  lua_code_cache off;
+
+init_worker_by_lua_file
+在init_worker_by_lua_file是0.9.5之后才支持的，升级到openresty1.7.2.1后，ngx_lua用的版本是0.9.10,就能识别这指令了。既有openresty不支持init_worker_by_lua_file
+lua内不支持.. 后跟bool
+lua可传多个return，函数返回的return与外面函数调用的返回类型需一致。
+当出现internal error,但未打印出log，则可考虑打开log级别为debug
+
+
+ init_by_lua_file 的引用代码在每次请求都会被执行的问题:
+    当你通过 lua_code_cache off 配置指令禁用 Lua 代码缓存时，init_by_lua* 
+程序会在每请求的开始执行。这是因为在此种模式下，每个请求都会创建一个独立的 Lua VM 实例，所以必须总是需要在新的 Lua VM 上执行 
+init_by_lua 以确保每个 VM 都正确地得到初始化。
+
+关闭后台守护进程： daemon off
+单进程调试：master_process  off;

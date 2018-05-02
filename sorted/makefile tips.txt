@@ -1,0 +1,13 @@
+$@ 扩展成当前规则的目的文件名，
+$< 扩展成依靠列表中的第 一个依靠文件
+$^ 扩展成整个依靠的列表（除掉了里面所有重 复的文件名）
+
+打印变量的方法
+Add the following rule to your Makefile:
+
+print-%  : ; @echo $* = $($*)
+
+Then, if you want to find out the value of a makefile variable, just:
+
+make print-VARIABLE
+

@@ -1,0 +1,53 @@
+F3 查找模式下，定位到下一个匹配处
+win+Alt+左箭头  跳转到上一位置
+Alt+F7 在整个工程内查找指定类或变量
+ctrl+alt+b 进入函数的实现
+
+jidea快捷键可修改为eclipse模式，所有需重记忆
+
+
+eclipse快捷键
+运行到断点处 F8
+单步运行 F6
+单步进入函数 F5
+由函数内部返回至调用处 F7
+工程内搜索 ctrl+h
+停止调试 ctrl+F2
+开始远程调试： Alt+Shift+D 
+跳转到指定行： ctrl+L
+搜索文档的下一个： ctrl+K
+自动格式化：ctrl+shift+F
+保存所有：ctrl+shift+s
+查找文件：ctrl+shift+R
+查找函数所有引用：ctrl+shift+G
+格式化文档：ctrl+shift+F
+关闭所有视图：Ctrl+Shift+W
+当前行和下面一行交换位置：Alt+↓
+前一个编辑的页面：Alt+←
+最后编辑的地方：Ctrl+Q 
+注释当前行：Ctrl+/
+关闭当前Editer：Ctrl+W
+定位到对于的匹配符（譬如{}）：Ctrl+Shift+P
+重命名：Alt+Shift+R
+删除当前行：Ctrl+D
+列出所有实现该接口的类：ctrl+T
+头文件与cpp文件的互相转换：ctrl+tab
+查找方法引用：鼠标点在变量上，然后ctrl+shift+G
+代码区全屏：ctrl+M
+添加/* */注释 ： Ctrl+Shift+/
+删除/* */注释 ： Ctrl+Shift+\
+添加删除//注释： Ctrl + / 或 Ctrl + Shift + c
+
+
+jidea远程调试：
+设置：Run->Edit Configuration 然后照网上内容操作
+设置ssh代理： ssh -L 8000:10.189.46.16:8000 zhangmaolin7@jps.jd.com -p 80
+
+jidea的多线程：
+主线程有断点不会进入子线程，主线程无断点会进入子线程
+调试子线程时，会将其它线程阻塞
+打开setting窗口：ctrl+alt+S
+
+转换了C++工程：Click File->New->Convert to a C/C++ project
+maven安装新包：在maven上直接运行package及install
+ 

@@ -1,0 +1,24 @@
+cgdb主要三个窗口
+source window
+GDB window
+status bar
+
+搜索源代码：在source window模式下输入/或?
+进入status bar并输入命令：在source windows模式下输入：
+打开文件命令：在source windows模式下输入：o
+在source windows下按空格，将source windows下当前行设置断点，按t，设置临时断点
+按-，使source windows变小，使gdb windows变大
+按=，使source windows变大，使gdb windows变小
+F11 在gdb windows下输入，到gdb的最开始
+F12 在gdb模式下输入，到gdbwindows的最末尾
+
+设置pending断点：set breakpoint pending on
+b classname::functionname如果有命名空间的话，需要修改为b namesapace1::namespace2……namespacen::classname::functionname
+gdb带参数调试：gdb --args ./a arg1 arg2 ... argn
+在函数地址处设置断点:b *(函数地址)
+
+gdb调试时加入-d参数：加入搜索文件夹
+
+ set scheduler-locking off|on|step  : off 不锁定任何纯种，on
+ 只有当前被调试线程执行
+
