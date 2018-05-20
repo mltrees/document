@@ -1,1 +1,2 @@
 eclipse导入go的工程：
+Go is not suited for real-time software because of the gargabe collection and automatic memory allocation
