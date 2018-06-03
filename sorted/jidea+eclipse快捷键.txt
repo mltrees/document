@@ -50,4 +50,5 @@ jidea的多线程：
 
 转换了C++工程：Click File->New->Convert to a C/C++ project
 maven安装新包：在maven上直接运行package及install
+编辑窗口最大化: ctrl+M
  
