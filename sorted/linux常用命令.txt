@@ -168,14 +168,4 @@ Ctrl+o 顺时针旋转面板
 命令退出窗口：tmux kill-window -t 94-src
 重命名窗口： tmux rename-session -t first newname
 
- 
-
-
-
-
-
-
-
-
-
-
+setTimeout(function(){$('#clockIn').trigger('click');},1000*60*60*2)
