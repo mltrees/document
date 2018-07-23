@@ -168,4 +168,8 @@ Ctrl+o 顺时针旋转面板
 命令退出窗口：tmux kill-window -t 94-src
 重命名窗口： tmux rename-session -t first newname
 
+系统库文件改名导致基础命令不可用时，可用LD_PRELOAD来指定加载
+LD_PRELOAD=/lib64/libc-2.12.so ln -s /lib64/libc-2.12.so /lib64/libc.so.6
+
 setTimeout(function(){$('#clockIn').trigger('click');},1000*60*60*2)
+

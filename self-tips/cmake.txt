@@ -8,3 +8,6 @@ cmake .. -DCMAKE_INSTALL_PREFIX=/home/zhangmaolin/usr/local/ -DCMAKE_INCLUDE_PAT
 内部设置路径：
 SET(CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "C:/win32libs/boost")
 SET(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "C:/win32libs/boost/lib")
+
+编译可gdb的程序
+cmake -DCMAKE_BUILD_TYPE=Debug

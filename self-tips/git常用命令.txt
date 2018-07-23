@@ -96,6 +96,7 @@ git checkout df3db72ae2147c41a3598c7363ed18b53564eeff -- token_group_a.conf
 当merge分支时，解决 You are in the middle of a merge -- cannot amend.方法：rm .git/MERGE_HEAD，然后继续git ca即可。
 查看暂存文件与上一版本的差异：git d --cached filename
 修改本地branch：git branch -m <oldname> <newname>， git branch -m <newname> (修改当前branch名称)
+修改本地branch：git branch -m  <newname>，  将当前branch改为为newname
 将指定分支合并进当前分支：git merge <branch>
 git ca后的撤消：git reset HEAD~
 gerrit回退到某一历史版本的方法：git fetch到想要回退的历史版本，之后git review -f
@@ -124,6 +125,7 @@ Host gerrit.jd.com
 revert回上一版本代码: git revert commitid（如果上一版本是两个分支合并，需要git revert commitid -m 1，代表revert回master分支）
 gitk： 图形化客户端
 查看某次commit都修改了哪些文件：git diff cc7434a19c6c30e5a6f779a77fba91544577d6ae^! --name-only
+查看某次commit的修改与上一次的diff： git d commitid^ commitid
 
 
 

@@ -1,3 +1,0 @@
-compile folly
-should asign the special openssl path, just like
-cmake -DOPENSSL_ROOT_DIR=/Users/zhangmaolin1/usr/local/include/openssl -DOPENSSL_LIBRARIES=/Users/zhangmaolin1/usr/local/ -DCMAKE_INSTALL_PREFIX=/Users/zhangmaolin1/usr/local/ ..

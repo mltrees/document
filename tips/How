@@ -1,0 +1,42 @@
+
+How to test HTTP Keep alive is actually working
+Ask Question
+up vote
+13
+down vote
+favorite
+3
+
+I know HTTP keep-alive is on by default in HTTP 1.1 but I want to find a way to confirm that it is actually working.
+
+Does anyone know of a simple way to test from a web browser (EG how to make sense of wireshark). I know I need to look for multiple HTTP requests over the same TCP connection but I don't know how to confirm that in wireshark or any other way.
+
+Thanks!
+http wireshark keep-alive
+shareimprove this question
+asked Nov 22 '10 at 3:54
+sub
+66113
+add a comment
+3 Answers
+active
+oldest
+votes
+up vote
+17
+down vote
+
+As Ron Garrity said on ServerFault, you can use Curl like this:
+
+curl -Iv http://www.aptivate.org 2>&1 | grep -i 'connection #0'
+
+And it outputs these two lines if keep-alive is working:
+
+* Connection #0 to host www.aptivate.org left intact
+* Closing connection #0
+
+And if keep-alive is not working, then it just outputs this line:
+
+* Closing connection #0
+
+

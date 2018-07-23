@@ -10,3 +10,15 @@ pagedown:fn+向下箭头
 隐藏当前窗口 command+H
 隐藏其它窗口option + command + H
 打开spotlight command + space
+修改hostname等：
+sudo scutil --set ComputerName "newname"
+sudo scutil --set LocalHostName "newname"
+sudo scutil --set HostName "newname"
+
+
+
+
+install wget
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install wget --with-libressl
+

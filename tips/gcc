@@ -1,0 +1,45 @@
+
+gcc unable to find shared library libisl.so
+Ask Question
+up vote
+3
+down vote
+favorite
+2
+
+I installed gcc version 5.1 locally on a cluster having OS as CentOS where I dont have root access (so i cant use any commands like 'sudo'). (The global gcc version installed is 4.4). I also modified the path variable to include the path to my local version at the beginning of the path variable. Before, when I was trying to install boost using the global version, it worked fine. But now, when I try to install boost, it shows the following error:
+
+/users/home/head/cmp/soft/sft/gcc/bin/../libexec/gcc/x86_64-unknown-linux-gnu/5.1.0/cc1: error while loading shared libraries: libisl.so.10: cannot open shared object file: No such file or directory
+
+Any ideas on how to fix this will be highly appreciated.
+gcc isl
+shareimprove this question
+edited Nov 16 '15 at 12:53
+fuz
+52.9k13117238
+asked Nov 16 '15 at 11:20
+Python_user
+3541317
+
+show 24 more comments
+1 Answer
+active
+oldest
+votes
+up vote
+3
+down vote
+accepted
+
+Follow the instructions at https://gcc.gnu.org/wiki/InstallingGCC
+
+Specifically, don't install ISL manually in some non-standard path, because GCC needs to find its shared libraries at run-time.
+
+The simplest solution is to use the download_prerequisites script to add the GMP, MPFR, MPC and ISL source code to the GCC source tree, which will cause GCC to build them for you automatically, and link to them statically.
+shareimprove this answer
+edited Nov 16 '15 at 13:11
+answered Nov 16 '15 at 13:00
+Jonathan Wakely
+124k14226383
+
+
