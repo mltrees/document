@@ -1,0 +1,40 @@
+下一单词：w
+下一个空格后的单词：W
+上一个单词：b
+上一个空格后的单词：B
+行末：$
+行首：^
+空格：\s
+行末空格：\s\+$
+行首空格：^\s\+
+删除tab后的所有内容： :%s/\t.*//
+删除行尾多个空格 : %s/\s\+$//g
+删除行首多个空格 : %s/^ \+//g
+16进制显示binary文件： vim打开后:%!xxd
+i2进制显示binary文件： vim打开后:%!xxd -b
+匹配删除：
+删除含有“#”开头的行：:% g/^#/d 
+删除空行： :% g/^$/d
+删除不含该字符串的行： :% v/pattern/d  或g!/pattern/d
+删除包含特定字符的行：g/pattern/d 
+对每行只保留匹配内容而删除这一行中的其它内容： :%s/^.*\(pattern\).*$/\1/g
+删除包含特定字符串的行： :g/pattern/d
+删除包含特定字符串的行,每次删除前都提示： :%s/^.*pattern.*\n//c
+处理字符串: /123/456/789/109/example.txt, 怎么删除到最后一个/,然后得到example.txt ?： 0dte ， 说明：0     到行首，    dte   删到第一个e
+处理字符串: /123/456/789/ef/109/example.txt, 怎么删除到最后一个/,然后得到example.txt ? $T/d0 ,说明：$     到行尾, T/    从后往前搜到第一个/,d0    删到行首
+处理字符串: /123/456/789/ef/109/example.txt, 怎么删除到最后一个/,然后得到example.txt ? d/ex然后回车, 说明：d     删除, /ex   搜到第一个ex
+用,替换换行: 1,$s/\n/,/g
+
+
+
+
+
+linux文本处理相关命令：
+去重：shell下执行：sort -u a.txt -o b.txt
+统计重复行：sort a.txt |uniq -dc
+对比两个log，不对比第二个字段： tail -5 install.log.syslog |uniq -f 1
+
+
+tr： 替换字段
+找出文件1和文件2相同的行：cat resmap.log2 unique_extractkey.log | sort | uniq -d | sort -n
+将文档中的","替换成回车: cat ip-lxj.txt | tr , '\n' > a.txt

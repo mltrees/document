@@ -16,3 +16,6 @@ eclipse导入maven工程：import->maven工程
 编译maven工程：右键pom.xml，然后选择run as->maven build
 
 maven的仓库地址配置在settings.xml中，一个是maven的conf目录，是全局的，另外一个是用户级别的，本地在C:\Users\zhangmaolin1\.m2
+
+
+当io吞吐量很大的时候，g1的内存回收比cms的内存回收效果要好。

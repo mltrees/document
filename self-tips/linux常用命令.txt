@@ -145,6 +145,23 @@ screen -S some_name proc
 // Kill detached session
 screen -S some_name -X quit
 
+
+base命令：
+
+Move back one character. Ctrl + b
+Move forward one character. Ctrl + f
+Delete current character. Ctrl + d
+Delete previous character. Backspace
+Undo. Ctrl + -
+
+Move to the start of line. Ctrl + a
+Move to the end of line. Ctrl + e
+Move forward a word. Meta + f (a word contains alphabets and digits, no symbols)
+Move backward a word. Meta + b
+Clear the screen. Ctrl + l
+
+
+
 tmux命令：
 Ctrl+b后
  ？列出所有快捷键
@@ -152,6 +169,7 @@ Ctrl+b后
  x 关闭当前面板
  d detach窗口
  D 选择要脱离的窗口
+ c 新建一个新的窗口
  ! 将当前面板置于新窗口
  ” 	将当前面板平分为上下两块
 % 	将当前面板平分为左右两块
@@ -162,6 +180,8 @@ s 	选择并切换会话；在同时开启了多个会话时使用
 快捷键操作
 ctrl+D 退出
 Ctrl+o 顺时针旋转面板
+option+up： 重定义pannel的大小
+
 
 加载个性化的配置文件 source-file ~/.tmux.conf
 
@@ -172,4 +192,7 @@ Ctrl+o 顺时针旋转面板
 LD_PRELOAD=/lib64/libc-2.12.so ln -s /lib64/libc-2.12.so /lib64/libc.so.6
 
 setTimeout(function(){$('#clockIn').trigger('click');},1000*60*60*2)
+
+
+
 

@@ -1,0 +1,5 @@
+任何server应该有start有stop
+
+可扩展的*define或typedefine要统一使用
+
+

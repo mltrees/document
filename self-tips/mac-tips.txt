@@ -14,6 +14,9 @@ pagedown:fn+向下箭头
 sudo scutil --set ComputerName "newname"
 sudo scutil --set LocalHostName "newname"
 sudo scutil --set HostName "newname"
+terminal当前的filder在finder中打开： open .
+强制退出无响应的程序： cmd+option+esc, 然后选择程序强制退出
+键盘左滑、右滑： control+left, control+right
 
 
 
