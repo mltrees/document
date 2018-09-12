@@ -25,3 +25,19 @@ install wget
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install wget --with-libressl
 
+install thrift-0.10.0
+brew unlink thrift
+brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/16ebe5f1843e6cb54856311ff0f676be53007329/Formula/thrift.rb
+
+
+
+外接键盘设置f1~f8为默认功能键
+
+Search Results
+Featured snippet from the web
+If you prefer the top row of keys to always behave as standard function keys without holding the Fn key:
+
+    Choose System Preferences from the Apple menu.
+    Click Keyboard.
+    Click the Keyboard tab if it's not already highlighted.
+    Select "Use all F1, F2, etc. keys as standard function keys"

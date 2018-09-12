@@ -127,5 +127,8 @@ gitk： 图形化客户端
 查看某次commit都修改了哪些文件：git diff cc7434a19c6c30e5a6f779a77fba91544577d6ae^! --name-only
 查看某次commit的修改与上一次的diff： git d commitid^ commitid
 
+gerrit修改author为别人的代码：
+git commit --amend --author="zhangmaolin7 <zhangmaolin1@jd.com>"
+
 
 

@@ -1,6 +1,10 @@
 sz 从linux传至windows，从windows操作
 rz 从window上传至linux，在linux操作
 sudo chown zhangmaolin:zhangmaolin share, 将share文件夹所有者修改为zhangmaolin，用户组修改为zhangmaolin
+按时间维度排序： ll -t
+按文件大小排序： ll -S
+
+
 
 
 解决Redirect Network(New newthop: 10.58.94.1)

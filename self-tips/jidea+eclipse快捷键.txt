@@ -43,6 +43,7 @@ jidea远程调试：
 设置：Run->Edit Configuration 然后照网上内容操作
 设置ssh代理： ssh -L 8000:10.189.46.16:8000 zhangmaolin7@jps.jd.com -p 80
 
+
 jidea的多线程：
 主线程有断点不会进入子线程，主线程无断点会进入子线程
 调试子线程时，会将其它线程阻塞
@@ -51,4 +52,26 @@ jidea的多线程：
 转换了C++工程：Click File->New->Convert to a C/C++ project
 maven安装新包：在maven上直接运行package及install
 编辑窗口最大化: ctrl+M
- 
+jidea重发包后需重新import Reimport All Maven Projects
+
+
+
+
+
+mac-intellij
+批量注释： command + /
+指量块注释： command + shift + /
+定位到方法实现处： cmd + b
+自动导入提示没有的方法： option + enter (与windows版本中的alt+enter)效果一样
+
+mac调试程序：
+下一步，不进入函数体内: F8
+下一步，进入函数体内：F7
+跳出： SHIFT + F8
+运行到光标处： option + F9
+到下一断点：command + option + R
+增加删除断点： command + F8
+查看断点信息： command + shift + F8
+
+
+

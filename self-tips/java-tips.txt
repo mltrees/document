@@ -1,0 +1,57 @@
+mvn跳过测试：mvn package -Dmaven.test.skip=true
+java包含jar包  java -cp'.:java.jar'
+
+
+
+远程debug：
+1. linux内带debug端口启动
+2. 打开git bash
+3. 输入命令：ssh -L 8000:10.187.3.18:30909 chenlu62@jps.jd.com -p 80，其中10.187.3.18为远端ip，30909为远端开启的调试端口，chenlu62为堡垒机的名称
+4. 启动jidea远端调试代码
+
+maven创建命令：
+mvn archetype:generate -DgroupId=com.efn -DartifactId=study
+
+eclipse导入maven工程：import->maven工程
+编译maven工程：右键pom.xml，然后选择run as->maven build
+
+maven的仓库地址配置在settings.xml中，一个是maven的conf目录，是全局的，另外一个是用户级别的，本地在C:\Users\zhangmaolin1\.m2
+
+
+当io吞吐量很大的时候，g1的内存回收比cms的内存回收效果要好。
+
+查看jar包内的class unzip -l .jar
+
+jvm调优：
+标记清除，标记的是存活对象
+jvm，若内存垃圾碎片较多，则可能会触发gc。
+标记整理和标记清除均有复制问题；
+
+分代算法：
+新生代：edlen区和suvivor区（ellen区满了会触发新生代的垃圾回收。）
+老年代：多轮对像一直存活，老年代的垃圾回收即为full gc
+永久代：存放java类的文件及静态常量
+
+CMS：垃圾回收会有垃圾碎片。
+G1：也有垃圾碎片
+G1配置：
+避免设置yonggc大小
+暂停时间设置太小，大流量可能会导致进程假死
+stw期间，增加gc线徎数，增大到cpu核数*1.5
+
+
+
+代码优化：
+减少监控对象的使用
+减少静态变量的使用
+使用stringbuffer，不使用string来累加字符
+使用基本类型，不用封闭类型
+就近创建对像
+
+
+@Inject，看源注入源，可以看接口处的@ImplementedBy(...class)
+
+
+
+    使用jvisualvm调试内存线程等内容
+

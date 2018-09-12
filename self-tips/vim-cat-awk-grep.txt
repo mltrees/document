@@ -23,7 +23,10 @@ i2进制显示binary文件： vim打开后:%!xxd -b
 处理字符串: /123/456/789/109/example.txt, 怎么删除到最后一个/,然后得到example.txt ?： 0dte ， 说明：0     到行首，    dte   删到第一个e
 处理字符串: /123/456/789/ef/109/example.txt, 怎么删除到最后一个/,然后得到example.txt ? $T/d0 ,说明：$     到行尾, T/    从后往前搜到第一个/,d0    删到行首
 处理字符串: /123/456/789/ef/109/example.txt, 怎么删除到最后一个/,然后得到example.txt ? d/ex然后回车, 说明：d     删除, /ex   搜到第一个ex
+
 用,替换换行: 1,$s/\n/,/g
+替换前询问： /gc
+检查json语法对不对: :setf json
 
 
 
