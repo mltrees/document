@@ -1,0 +1,2 @@
+显示安装的插件: about:plugins
+显示禁用的选项： about:config

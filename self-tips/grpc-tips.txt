@@ -1,0 +1,3 @@
+grpc example
+在grpc::CreateChannel的时候，会同步新建grpc_executor和grpc_global_tim
+grpc 的cq_.Next会阻塞在epoll_wait函数处，等待epoll的结果。

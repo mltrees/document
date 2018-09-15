@@ -1,0 +1,27 @@
+从.txt文件load数据到指定数据库内的指定表： LOAD DATA LOCAL INFILE"pet.txt" INTO TABLE pet;
+删除表内数据: DELETE FROM pet;
+查看数据表的列及类型： DESCRIBE pet;
+查看所有的表: SHOW TABLES;
+创建table： CREATE TABLE pet (nameVARCHAR(20), owner VARCHAR(20),
+        -> species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
+mysql的字符串通常大小写无关；
+
+输出检索出的每一个唯一记录： SELECT DISTINCT owner FROM pet;
+输出检索结果，并按某行排序： SELECT name, birth FROM pet ORDERBY birth;
+输出检索结果，并按某行逆序排序： SELECT name, birth FROM pet ORDERBY birth DESC;
+找出以“b”开头的名字：SELECT * FROM pet WHERE name LIKE"b%";
+找出以“fy”结尾的名字： SELECT * FROM pet WHERE name LIKE"%fy";
+找出包含一个“w”的名字：SELECT * FROM pet WHERE name LIKE"%w%";
+找出包含正好5个字符的名字，使用“_”模式字符: SELECT * FROM pet WHERE name LIKE"_____";
+检索每个主人有多少宠物： SELECT owner, COUNT(*) FROM petGROUP BY owner;
+查看当前正在使用的数据库名称： SELECT DATABASE();
+
+新建用户：  CREATE USER yy IDENTIFIED BY '123';
+新建用户,只在localhost可登陆：  CREATE USER yy@localhost IDENTIFIED BY '123';
+新建用户拥有所有权限： GRANT ALL PRIVILEGES ON *.* TO zml@localhost;
+删除用户： DROP USER zmlmysql
+查看己有的用户：　SELECT host,user from mysql.user;
+客户端显示中文: charset utf8
+查看mysql某个表的建表语句： show create table t_role_info;
+
+

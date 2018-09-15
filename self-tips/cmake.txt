@@ -11,3 +11,12 @@ SET(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "C:/win32libs/boost/lib")
 
 编译可gdb的程序
 cmake -DCMAKE_BUILD_TYPE=Debug
+
+cmake add -g -O0
+set(CMAKE_BUILD_TYPE DEBUG)
+set(CMAKE_C_FLAGS "-O0 -ggdb")
+set(CMAKE_C_FLAGS_DEBUG "-O0 -ggdb")
+set(CMAKE_C_FLAGS_RELEASE "-O0 -ggdb")
+set(CMAKE_CXX_FLAGS "-O0 -ggdb")
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -ggdb")
+set(CMAKE_CXX_FLAGS_RELEASE "-O0 -ggdb")
