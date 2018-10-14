@@ -27,6 +27,10 @@ i2进制显示binary文件： vim打开后:%!xxd -b
 用,替换换行: 1,$s/\n/,/g
 替换前询问： /gc
 检查json语法对不对: :setf json
+范围替换：
+:5,12s/foo/bar/g
+当前行.与接下来两行+2：
+:.,+2s/foo/bar/g
 
 
 
