@@ -4,9 +4,17 @@
 上一个空格后的单词：B
 行末：$
 行首：^
+下半页：ctrl+d
+上半页：ctrl+u
+下一行；ctrl+e
+上一行：ctrl+y
+下一页：ctrl+b
+
 空格：\s
+
 行末空格：\s\+$
 行首空格：^\s\+
+
 删除tab后的所有内容： :%s/\t.*//
 删除行尾多个空格 : %s/\s\+$//g
 删除行首多个空格 : %s/^ \+//g
@@ -17,6 +25,8 @@ i2进制显示binary文件： vim打开后:%!xxd -b
 删除空行： :% g/^$/d
 删除不含该字符串的行： :% v/pattern/d  或g!/pattern/d
 删除包含特定字符的行：g/pattern/d 
+在行末增加" : :%s/$/"/g
+在行首增加" : :%s/^/"/g
 对每行只保留匹配内容而删除这一行中的其它内容： :%s/^.*\(pattern\).*$/\1/g
 删除包含特定字符串的行： :g/pattern/d
 删除包含特定字符串的行,每次删除前都提示： :%s/^.*pattern.*\n//c
@@ -27,10 +37,10 @@ i2进制显示binary文件： vim打开后:%!xxd -b
 用,替换换行: 1,$s/\n/,/g
 替换前询问： /gc
 检查json语法对不对: :setf json
-范围替换：
-:5,12s/foo/bar/g
+范围替换： :5,12s/foo/bar/g
 当前行.与接下来两行+2：
 :.,+2s/foo/bar/g
+查看进程内的线程：ps -T -p pid, top -H -p pid 可查看各个线程占用的资源
 
 
 
@@ -45,3 +55,8 @@ linux文本处理相关命令：
 tr： 替换字段
 找出文件1和文件2相同的行：cat resmap.log2 unique_extractkey.log | sort | uniq -d | sort -n
 将文档中的","替换成回车: cat ip-lxj.txt | tr , '\n' > a.txt
+mac使用find和sed： find ./ -type f -exec sed -i '' -e "s/192.168.20.1/new.domain.com/" {} \; 与linux不同在于增加了-i '' -e
+
+sed清除行尾空格: sed -i '' -e "s/[ \t]*$//"
+删除行头空格键和tab键: sed 's/^[ \t]*//g' (^[  \t]，是以空格或者tab键开头；与【^】不同，【^】是匹配除【^字符】之外的任意字符，例如5【^12】，匹配50、53、54，但是不匹配51和52)
+

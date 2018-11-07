@@ -53,5 +53,28 @@ stw期间，增加gc线徎数，增大到cpu核数*1.5
 
 
 
-    使用jvisualvm调试内存线程等内容
+使用jvisualvm调试内存线程等内容
+
+mac uninstall java
+sudo rm -fr /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
+sudo rm -fr /Library/PreferencePanes/JavaControlPanel.prefPane
+sudo rm -fr ~/Library/Application\ Support/Oracle/Java
+
+mac Java Home路径
+/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home
+
+linux 安装maven
+tar xvf apache-maven-3.0.5-bin.tar.gz
+mv apache-maven-3.0.5  /usr/local/apache-maven
+export M2_HOME=/usr/local/apache-maven
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH
+查看maven settings的位置： mvn -X
+
+
+jmap -histo 462521
+查看里面线程数：jstack pid
+生成dump文件：jmap -dump:format=b,file=dump.bin 462521
+解析dump文件： jhat -J-Xmx20480M dump.bin
+
 

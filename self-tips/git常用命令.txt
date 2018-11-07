@@ -130,5 +130,16 @@ gitk： 图形化客户端
 gerrit修改author为别人的代码：
 git commit --amend --author="zhangmaolin7 <zhangmaolin1@jd.com>"
 
+git查看unreachable的内容
+git fsck --unreachable --no-reflogs --no-cache HEAD | fgrep " tree " \
+| cut -d " " -f3 | xargs -r -n1 git ls-tree \
+| fgrep " blob " | cut -d " " -f 3- | sort -k2 -u
+将里面的内容打出来： it cat-file blob SHA-1-of-interesting-file
+
+git log commit tree
+git log --all --decorate --oneline --graph --date-order $( git fsck | awk '/dangling commit/ {print $3}'; git log -g --pretty='format:%H' )
+
+生成sshkey： ssh-keygen -t rsa
+
 
 

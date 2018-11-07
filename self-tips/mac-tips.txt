@@ -41,3 +41,5 @@ If you prefer the top row of keys to always behave as standard function keys wit
     Click Keyboard.
     Click the Keyboard tab if it's not already highlighted.
     Select "Use all F1, F2, etc. keys as standard function keys"
+
+修改状态栏位置（程序坞）

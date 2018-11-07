@@ -25,3 +25,6 @@ gdb调试时加入-d参数：加入搜索文件夹
 
 
 16进制打印5个字符：x/5bx rBase_ 
+
+查看某信号的处理逻辑：info signal SIG40
+忽略SIG40： handle SIG40 noprint nostop

@@ -169,7 +169,6 @@ Clear the screen. Ctrl + l
 tmux命令：
 Ctrl+b后
  ？列出所有快捷键
- c 新新窗口
  x 关闭当前面板
  d detach窗口
  D 选择要脱离的窗口
@@ -179,7 +178,9 @@ Ctrl+b后
 % 	将当前面板平分为左右两块
 , 	重命名当前窗口；这样便于识别
 . 	修改当前窗口编号；相当于窗口重新排序
-s 	选择并切换会话；在同时开启了多个会话时使用
+s/w 	选择并切换会话；在同时开启了多个会话时使用
+
+
 ： 输入命令：kill-server 停止tmux
 快捷键操作
 ctrl+D 退出
@@ -191,6 +192,8 @@ option+up： 重定义pannel的大小
 
 命令退出窗口：tmux kill-window -t 94-src
 重命名窗口： tmux rename-session -t first newname
+
+
 
 系统库文件改名导致基础命令不可用时，可用LD_PRELOAD来指定加载
 LD_PRELOAD=/lib64/libc-2.12.so ln -s /lib64/libc-2.12.so /lib64/libc.so.6
