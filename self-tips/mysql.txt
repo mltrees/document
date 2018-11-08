@@ -32,3 +32,6 @@ uncomment "bind-address>-->---= 127.0.0.1"
 
 查看mysql的超时时间：show global variables like '%timeout';
 
+
+root密码：password
+

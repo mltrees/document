@@ -222,6 +222,7 @@ ctrl+shift+n=新终端（terminal，在当前终端目录打开）
 
 ctrl+c=终止
 
+使用curl上传文件： curl -v -F key1=value1 -F upload=@localfilename URL
 
 
 

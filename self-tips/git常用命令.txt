@@ -129,6 +129,7 @@ gitk： 图形化客户端
 
 gerrit修改author为别人的代码：
 git commit --amend --author="zhangmaolin7 <zhangmaolin1@jd.com>"
+查看最近一次修改的文件统计：  git log --stat -1 或 git log --name-status -1
 
 git查看unreachable的内容
 git fsck --unreachable --no-reflogs --no-cache HEAD | fgrep " tree " \
