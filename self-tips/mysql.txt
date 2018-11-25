@@ -35,3 +35,13 @@ uncomment "bind-address>-->---= 127.0.0.1"
 
 root密码：password
 
+
+ubuntu install mysql
+sudo apt-get update
+sudo apt-get install mysql-server
+mysql_secure_installation
+
+
+
+public mysql root 123456
+

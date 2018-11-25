@@ -28,3 +28,4 @@ gdb调试时加入-d参数：加入搜索文件夹
 
 查看某信号的处理逻辑：info signal SIG40
 忽略SIG40： handle SIG40 noprint nostop
+打印长string: set print element 0
