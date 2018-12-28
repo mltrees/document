@@ -28,8 +28,11 @@ git stash		暂存正在进行的工作
 git stash list		列出正在进行的工作
 git stash pop		恢复git stash内容，并将stash里的内容删除
 git remote		查看远程分支信息
+git fetch & git commit origin/dev 切换到远端的dev分支
+git checkout develop && git merge feature/login 将feature/login的分支merge到develop分支上
 git blame <filename>	查看某文件最后修改提交的日子
 git log -n 1 --stat	查看最近一次提交所有更改过的文件
+git log -p filename 查看某一件的所有历史提交
 git diff HEAD^ -- filename 查看文件与上一版本的修改	
 
 将review的内容拉下来：

@@ -63,6 +63,7 @@ mac-intellij
 指量块注释： command + shift + /
 定位到方法实现处： cmd + b
 自动导入提示没有的方法： option + enter (与windows版本中的alt+enter)效果一样
+全局搜索: control + command + f
 
 mac调试程序：
 下一步，不进入函数体内: F8
@@ -72,6 +73,7 @@ mac调试程序：
 到下一断点：command + option + R
 增加删除断点： command + F8
 查看断点信息： command + shift + F8
+自动格式化： option+command+L
 
 
 

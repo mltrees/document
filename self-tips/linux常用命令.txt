@@ -225,5 +225,6 @@ ctrl+c=终止
 使用curl上传文件： curl -v -F key1=value1 -F upload=@localfilename URL
 增加user useradd admin -m -s /bin/bash
 
+以“=”为分隔符，打印第二列  awk -F "=" '{print $2 }'
 
 

@@ -41,6 +41,7 @@ i2进制显示binary文件： vim打开后:%!xxd -b
 当前行.与接下来两行+2：
 :.,+2s/foo/bar/g
 查看进程内的线程：ps -T -p pid, top -H -p pid 可查看各个线程占用的资源
+替换某行的所有内容:%s/aaa/bbb/e
 
 
 
@@ -59,4 +60,9 @@ mac使用find和sed： find ./ -type f -exec sed -i '' -e "s/192.168.20.1/new.do
 
 sed清除行尾空格: sed -i '' -e "s/[ \t]*$//"
 删除行头空格键和tab键: sed 's/^[ \t]*//g' (^[  \t]，是以空格或者tab键开头；与【^】不同，【^】是匹配除【^字符】之外的任意字符，例如5【^12】，匹配50、53、54，但是不匹配51和52)
+
+set 当替换的内容有/时，需要使用sed "s#find#$REPLACE#"
+
+格式化json: :%!python -m json.tool
+
 
