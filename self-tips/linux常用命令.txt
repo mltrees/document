@@ -221,10 +221,29 @@ ctrl+alt+t=新终端（terminal）
 ctrl+shift+n=新终端（terminal，在当前终端目录打开） 
 
 ctrl+c=终止
+grep "aa" -C 4  打印aa上下文各4行的数据
+fix error Binary file matches : grep -a a.log (grep -a -a的意思是让二进制文件等价于文本文件)
 
 使用curl上传文件： curl -v -F key1=value1 -F upload=@localfilename URL
 增加user useradd admin -m -s /bin/bash
 
 以“=”为分隔符，打印第二列  awk -F "=" '{print $2 }'
 
+bc:
+scale=5;sqrt(2) 计算根号2， 保留5位小娄
+
+
+
+
+计算两文件交集
+grep -F -f a.txt b.txt | sort | uniq
+计算差集
+a-b： grep -F -v -f b.txt a.txt | sort | uniq
+b-a：grep -F -v -f a.txt b.txt | sort | uniq
+
+使用cat求并集： cat aa.txt bb.txt | sort | uniq -d
+使用cat求交集： cat aa.txt bb.txt | sort | uniq -d （要求aa.txt和bb.txt无重复）
+
+
+求a.txt内的重复行：  sort a.txt | uniq -d
 
