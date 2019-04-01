@@ -1,0 +1,13 @@
+open image: xdg-open $file
+firefox show icon:
+    1.输入：cd /usr/share/applications
+    2.输入：sudo vi firefox.desktop 
+    在vi里面输入以下内容，然后保存并退出：
+    [Desktop Entry] 
+    Name=Firefox 6.0  
+    Comment=this is firefox 
+    Exec=/usr/lib/firefox/firefox 
+    Icon=/usr/lib/firefox/icons/mozicon128.png 
+    Terminal=false 
+    Type=Application 
+    Categories=Application;Network; 
