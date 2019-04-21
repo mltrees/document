@@ -24,6 +24,9 @@ mysql的字符串通常大小写无关；
 客户端显示中文: charset utf8
 查看mysql某个表的建表语句： show create table t_role_info;
 
+表修改：ALTER TABLE t_element_info ADD t_store_info_batch_id varchar(500) NOT NULL DEFAULT "UNDEFINE";
+
+
 mysql设备只允许当前访问：
 sudo vim /etc/mysql/mysql.conf.d//mysqld.cnf
 uncomment "bind-address>-->---= 127.0.0.1"
@@ -31,6 +34,8 @@ uncomment "bind-address>-->---= 127.0.0.1"
 查看mysql启动时间： show global status like 'uptime';
 
 查看mysql的超时时间：show global variables like '%timeout';
+查看数据库文件位置: show global variables like "%datadir%";
+MySQL删除数据库时无响应解决办法:执行show full processlist观察state和info两列，查看有哪些线程在运行。可以是由于线程网络中断锁表
 
 
 root密码：password
@@ -44,4 +49,5 @@ mysql_secure_installation
 
 
 public mysql root 123456
+
 

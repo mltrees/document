@@ -1,0 +1,25 @@
+page fault
+链接：https://www.nowcoder.com/questionTerminal/e0d559dac7454d1f9c7adcde5084130b
+来源：牛客网
+影响一个应用程序性能的因素有很多，这次说说page fault。
+1. 为什么会存在page fault问题？
+计算机的物理内存（看看你的内存条）有限，一般现在都是几个GB的容量了，BTW，我的笔记本有8GB，:-)。
+但应用程序的需求是无限的，操作系统为了解决这个矛盾，使用了虚拟内存的设计。简单的描述就是，给应用程序
+一个与物理内存无关的虚拟地址空间，并提供一套映射机制，将虚拟地址映射到物理内存。当然应用程序是不知道
+有这个映射机制存在的，他唯一需要做的就是尽情的使用自己的虚拟地址空间。操作系统提供的映射机制是
+运行时动态进行虚拟地址和物理地址之间的映射的，当一个虚拟地址没有对应的物理内存时候，
+映射机制就分配物理内存，构建映射表，满足应用程序的需求，这个过程就叫page fault。
+与直接访问物理内存不同，page fault过程大部分是由软件完成的，消耗时间比较久，所以是影响性能的一个关键指标。
+Linux把page fault又进一步分为minor page fault和major page fault。前面提到的分配物理内存，构建映射表过程可以看做是
+minor page fault。major page fault是由swap机制引入的，对于swap情况，地址映射好了后，还需要从外部存储读取数据，这个
+过程涉及到IO操作，耗时更久。
+2. 如何查看应用程序的page fault指标呢？
+1） 可以使用time命令：
+比如我想看看svm-train的情况（模型训练很耗资源）\time svm-train age_train_equal.txt（前面的斜杠表示不使用shell的内嵌time命令）
+输出是：7.68user 0.02system 0:07.71elapsed 99%CPU (0avgtext+0avgdata 42768maxresident)k
+0inputs+6696outputs (0major+15445minor)pagefaults 0swaps
+可以看到只有minor page fault，没有major。
+time命令的实现是用到了Linux提供的rusage机制。Linux的wait API可以返回一个应用程序的运行过程的资源消耗情况。
+如果你想在自己的代码中获取资源利用情况，可以使用libc的getrusage函数，这个函数也是内核的API。
+2） proc文件系统
+Linux系统下的/proc/PID/stat文件，也提供了相关统计数据。

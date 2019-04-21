@@ -1,0 +1,4 @@
+sudo yum install cyrus-sasl-devel.x86_64 (for error "Please install libsasl2")
+mstch()
+snappy(https://github.com/google/snappy.git 1.1.7)
+mstch(https://github.com/no1msd/mstch.git 需用最新版0fde1cf94c26ede7fa267f4b64c0efe5da81a77a)

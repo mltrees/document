@@ -42,6 +42,7 @@ i2进制显示binary文件： vim打开后:%!xxd -b
 :.,+2s/foo/bar/g
 查看进程内的线程：ps -T -p pid, top -H -p pid 可查看各个线程占用的资源
 替换某行的所有内容:%s/aaa/bbb/e
+将某文本内的行按ascii码排序： sort file
 
 
 

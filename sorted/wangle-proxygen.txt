@@ -1,0 +1,95 @@
+wangle server
+1. eventbase(libevent) usage
+新建aceptor thread pool, threadpool new eventbase object
+2. libevent callack
+    EventHandler.cpp中 在callback中显示调用了bumpHandlingTime()
+    EventHandler作为入参传进去2. libevent callack
+        EventHandler.cpp中 在callback中显示调用了bumpHandlingTime()
+
+the event loop which libevent needed is create in IOThreadPooling
+
+
+
+wangle client
+pipline: pipeline->AsyncSocketHandler->Tansport to hold the socket and provide the read and write callback.
+
+the Transport::
+
+
+
+wangle pipeline
+
+pipeline serially run handler which register at begin, ，to handle event with AsyncSocketHandler which registered at the end of the callback to implimentaton the write and read function
+pipeline->AsyncSocketHandler->Transport->attachEventBase(detachEventBase) to registe a callback in a libevent loop
+pipeline will call sevral handlers that each of them will imply the read and write function, then the buf will change step by step
+
+
+
+
+
+ServerBootstrap:
+will use ChildPipelineFactory to create pipeline with each connection
+use NotificationQueue to consume eventbase message which received
+and use ChildPipelineFacory to create new pipeline for every new connection
+
+
+
+
+ClientBootstrap:
+use EventHandler Class to register eventid to kernal, and make pipeline around libevent and HandlerAdapter<> which implimentation in applicaton hierachy.
+the asyncsocket is implementation by register AsyncSocketHandler
+
+
+
+event process:
+libevent callback sequence: EventHandler::libeventCallback()->IoHandler::handlerReady()->AsyncSocket::ioReady()->
+
+
+some basic handlers function
+class EventHandler:register event and add libeventcallback, the promise is the member of ClientBootstrap
+class AsyncSocketHandler: wrapper the writeCallBack and ReadCallBack, the promise is declared in class member, DelayDestroy to ensure send the last msg.
+class EventBase: EventBase provides a main loop that notifies EventHandler callback objects  when I/O is ready on a file descriptor, and notifies AsyncTimeout objects.
+class Folly::Future<> firewrite is a chain call which will call the next one
+
+
+proxygen basic class
+HTTPConnector:
+HTTP1xCodec: parse HTTP1 protocal
+proxygen, AsyncSocket associated with HttpSession, with inherited by HttpUpSession and HttpDownSession, 
+
+divided the hierarchy with the onHeader, onBody, onEOM which refer to the http sequence.
+
+
+
+c++17 syntax
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+boost::variant：
+You can probably use boost::variant with some changes. To start with, you need to tell boost::variant which types it will be storing:
+
+boost::variant<int, string, bool> v;
+Since you probably will be using this type in a few places, you will probably want to create an alias for it. i.e.
+
+typedef boost::variant<int, string, bool> myvar;
+then you can use myvar directly:
+
+myvar x = "hello";
+myvar y = 20;
+myvar z = false;
+to retrieve values:
+
+string s = boost::get<string>(x);
+int i = boost::get<int>(y);
+bool b = boost::get<bool>(z);
+If you attempt to get a different type than is stored in the variant, it will throw an exception.
+
+You can query the variant's type with the which() member function. It will return a 0-based index to the type the variant is currently holding.
+
+switch (x.which()) {
+    case 0: // it's an int
+    case 1: // it's a string
+    case 2: // it's a bool
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+typeid 求变量类型

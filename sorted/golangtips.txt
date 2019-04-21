@@ -1,0 +1,11 @@
+数字类型有complex numbers, for example complex64 and complex128, 
+    var c1 complex64 = 5 + 10i, which 5 is real and 10i is image
+    iota is used with const definition which auto increase
+    the init() function is special which will automatic run before main() function
+    strings.Join() is more efficient than using + to concatenating strings
+    strings package with many string operation functions such as Split, Index, Sequence and so on.
+    go can not take the address of a literal or a constant
+    go map is a reference to a hash table
+    blank identifier _
+    map的初始值是一个nil,但空map有值，在给map赋值时，需要allocate the map first
+    go map's key is distinct, so a map can serve the purpose of a set

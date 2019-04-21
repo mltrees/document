@@ -1,0 +1,45 @@
+在Ubuntu上使用eclipse，发现图标显示是个问号，觉得很奇怪。想着可能是软件或者系统的问题，于是上网找资料解决。对于我这有轻微强迫症的人，不解决，不罢休。 
+找了很多资料，下面是我总结的解决方案。
+
+一、进入文件夹 “/usr /share /applications”，查看是否存在eclipse.desktop，文件夹里面的文件是控制application图标显示的。如果eclipse.desktop不存在，我们需要创建一个。
+创建步骤如下：
+
+cd  /usr/share/applications    
+sudo vim eclipse.desktop      //打开eclipse.desktop
+1
+2
+将以下内容复制进eclipse.desktop，
+
+[Desktop Entry]
+Version=4.3.0
+Type=Application
+Terminal=false
+Exec=/opt/eclipse/eclipse
+Name=Eclipse
+Icon=/opt/eclipse/icon.xpm
+X-Ayatana-Desktop-Shortcuts=Eclipse
+[Programming Shortcut Group]
+Name=Eclipse
+Exec=/opt/eclipse/eclipse
+TargetEnvironment=Unity
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+保存文件并退出. （退出：ESC + :x!/ :x/ :qw!）
+
+二、如果以上方法无效，进行下一步
+检查看〜/ .local /share/applications 应用程序中是否有一个eclipse.desktop文件，因为〜/ .local /share /applications中的.desktop文件会优先显示出来。覆盖/ usr /share /applications中的全局文件，这意味着无论您对全局更改如何，它都无效。
+如果〜/ .local /share/applications中有一个eclipse.desktop，删除它。
+现在eclipse的图标已经可以正常显示了。
+参考网址：
+https://askubuntu.com/questions/735901/eclipse-icon-not-shown-desktop-file-points-to-xpm
+https://wiki.ubuntu.com/fballem/Software%2012.04#Eclipse
