@@ -48,3 +48,6 @@ thrift -r --gen cpp clerk.thrift
 
 protobuf使用：
 protoc --proto_path=. --cpp_out=generatedcpp/ ps/*.proto
+
+gen grpc client
+protoc -I=. --grpc_out=. helloworld.proto --plugin=protoc-gen-grpc=/usr/local/bin/grpc_cpp_plugin

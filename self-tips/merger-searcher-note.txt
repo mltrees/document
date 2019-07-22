@@ -1,0 +1,31 @@
+1. 使用bazel build //...编译出需要的searcher和merger，所在目录分别为
+searcher： bazel-bin/searcher/server/searcher
+merger：bazel-bin/merger/server/merger
+
+
+searcher的配置目录是testresource/config
+searcher的配置目录是testresource/merger-config
+
+
+
+
+searcher的启动方法:
+./bazel-bin/searcher/server/searcher -server_config_file=../testresource/config/server.conf
+./bazel-bin/merger/server/merger -server_config_file=../testresource/merger-config/server.conf
+可在任意目录启动，只要指定好对应的searcher路径及server.conf路径即可。
+
+
+
+merger的启动方法:
+可在任意目录启动，只要指定好对应的merger路径server.conf路径即可。
+
+使用searcher client访问searcher：
+./bazel-bin/searcher/client/searcher_client -key=iphone -port=8003
+
+使用merger client访问merger
+./bazel-bin/merger/client/merger_client "iphone"
+
+
+
+
+

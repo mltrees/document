@@ -192,6 +192,7 @@ option+up： 重定义pannel的大小
 
 命令退出窗口：tmux kill-window -t 94-src
 重命名窗口： tmux rename-session -t first newname
+tmux支持256色： alias tmux="tmux -2"
 
 
 
@@ -199,6 +200,7 @@ option+up： 重定义pannel的大小
 LD_PRELOAD=/lib64/libc-2.12.so ln -s /lib64/libc-2.12.so /lib64/libc.so.6
 
 setTimeout(function(){$('#clockIn').trigger('click');},1000*60*60*2)
+setTimeout(function(){$('a')[1].click();},1000*60*60*2)
 
 terminal quick
 tab=补全 
@@ -246,4 +248,9 @@ b-a：grep -F -v -f a.txt b.txt | sort | uniq
 
 
 求a.txt内的重复行：  sort a.txt | uniq -d
+
+搜索大小写任意的vivek或raj：grep -E -i -w 'vivek|raj' /etc/passwd (说明-E 正则表达式，-i: 忽略大小写 -v 反向选择， -a 将binary文件以text文件方式搜寻数据)
+job: 查看正在执行的后台进行
+bg 1 后台运行
+fg 1 回到前台支持
 

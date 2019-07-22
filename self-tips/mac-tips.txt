@@ -17,6 +17,8 @@ sudo scutil --set HostName "newname"
 terminal当前的filder在finder中打开： open .
 强制退出无响应的程序： cmd+option+esc, 然后选择程序强制退出
 键盘左滑、右滑： control+left, control+right
+锁屏 control + command+q
+退出登陆  shift + command + q
 
 
 

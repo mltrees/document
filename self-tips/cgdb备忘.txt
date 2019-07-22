@@ -30,3 +30,4 @@ gdb调试时加入-d参数：加入搜索文件夹
 忽略SIG40： handle SIG40 noprint nostop
 打印长string: set print element 0
 打印中文: set charset UTF-8
+set max-value-size unlimited (set max-value-size bytes)

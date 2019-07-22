@@ -43,6 +43,8 @@ i2进制显示binary文件： vim打开后:%!xxd -b
 查看进程内的线程：ps -T -p pid, top -H -p pid 可查看各个线程占用的资源
 替换某行的所有内容:%s/aaa/bbb/e
 将某文本内的行按ascii码排序： sort file
+忽略大小写： :set ic (:set ignorecase)
+大小写敏感: :set noic
 
 
 
@@ -65,5 +67,11 @@ sed清除行尾空格: sed -i '' -e "s/[ \t]*$//"
 set 当替换的内容有/时，需要使用sed "s#find#$REPLACE#"
 
 格式化json: :%!python -m json.tool
+.h,.cpp互相切换： :e %:r.cpp
+
+ctags:
+生成tags： ctags -R
+跳转到函数定义： control + ]
+跳回前文： control + o ; control + t
 
 

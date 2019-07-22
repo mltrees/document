@@ -1,0 +1,9 @@
+bazel build //... 编译目录下所有内容
+bazel test //searcher/...
+编译出可gdb版本: bazel build -c dbg merger/fetcher:fetcher_test --strip=never
+之后执行即可
+
+--jobs 10 限制job并发数
+--cache_test_results=(yes|no|auto) (-t)  强制执行test，不走cache
+
+bazelclean --expunge： 清理cache
