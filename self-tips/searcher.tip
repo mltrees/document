@@ -1,0 +1,7 @@
+搜索重构项目 tips
+
+1. 遍历倒排使用node的方式，node中有sons，成员仍为node，node的类型决定多个son之间是And还是or的关系。每个node有自己的current_id
+    1.1 每个node包含使用的倒排链指针，从而实现用node遍历倒排链，多个node使用不同的operator，得到对应的倒排
+2. 个性化待补充（？）
+3. 分词？
+
