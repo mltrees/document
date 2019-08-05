@@ -179,6 +179,7 @@ Ctrl+b后
 , 	重命名当前窗口；这样便于识别
 . 	修改当前窗口编号；相当于窗口重新排序
 s/w 	选择并切换会话；在同时开启了多个会话时使用
+panel swith: prefix + { 或prefix+ }
 
 
 ： 输入命令：kill-server 停止tmux

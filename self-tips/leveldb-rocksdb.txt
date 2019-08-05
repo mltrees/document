@@ -1,0 +1,56 @@
+
+leveldb特点：
+1. 持久化存储，主要是硬盘存储
+2. 根据key值有序存储
+3. 支持快照及压缩功能
+
+
+leveldb
+MemTable:
+Immutable:
+
+硬盘：
+Current: 当前使用的manifest
+Manifest:
+log
+SSTable(sorted string table): 
+
+
+
+documents:
+level db: https://www.cnblogs.com/zhihaowu/p/7884424.html
+skiplist: https://www.cnblogs.com/xuqiang/archive/2011/05/22/2053516.html
+
+
+log文件：
+32K为单位的物理Block。读取时以Block为基础读取单位
+每个Key：Value对是一条记录数据，对数据会增加CheckSum，记录长度及类型
+
+
+leveldb不同层级是sst文件
+
+
+sst
+.sst会把文件划分为固定大小的物理存储块
+sst主要分为数据存储区和数据管理区
+    数据管理区：数据索引（每个数据块的起始及终止key）
+    数据存储区：kv对，及重启点
+
+
+
+跳表：
+    相对于单向链表，增加指向下下mode的指针。要求链表有序
+
+读取过程：先找memtable，再查找Immutable，然后由level0~leveln顺序查找。找不到即返回
+
+
+tips:
+leveldb可能会有key重复。
+
+compaction过程：
+minor compaction: 将memtable数据导出到SSTable文件中(简单将memtable写入level0)
+major compaction：合并不同层级的SSTable文件（L层和L+1层文件合并， 待合并的L层的文件及涉及到的L+1层文件整体合并）
+
+
+to-do
+跳表的分析
