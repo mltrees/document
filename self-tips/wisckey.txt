@@ -1,0 +1,35 @@
+# 基于leveldb，利用ssd随机读写强的特点，做了针对性的优化。
+
+
+# LSM-tree： 是一种架构，而非一个数据结构。中心思想是leveldb的分level的读写。
+# LSM-tree的主要的问题是读写放大（read and write amplification）：读写放大=碰盘实际读写的数据量/用户需要的数据量
+    * 读放大： 两个方面。1. 读一个数据，可能需要读各个level的数据；2. 找一个key-value，需要读多个file的索引
+    * 写放大： 写本身很快，但如果触发了compaction过程，则会导致写放大
+
+
+# wiscKey设计目标:
+    * Low write amplification
+    * Low read amplification
+    * SSD optimized.
+    * Feature-rich API(即实现了LSM-tree对应的api)
+    * Realistic key-value sizes（适配key-value的size更加广泛）
+
+# wiscKey的实现手段:
+    * key value分离。key放在LSM-tree中，可以触发对应的compaction；value放在一个分离的连续文件中(value-log file, vLog)，key存放value的存放位置。这样compaction的时候仅key的大小会影响硬盘的读写。
+
+# wiscKey的Put, Get, Update, Delete
+    * Put: 先把value写到vLog中，再把vLog-offset及key写入LSM-tree
+    * Get: 先查找LSM-tree中的key，查找到后，用对应的offset查找到对应的value
+    * Update: 与LSM-tree的Update一致
+    * Delete: 仅删除在LSM-tree中的key，value在后续gc（garbage collected）时删除。依据是没有key引用
+
+# wiscKey主要的特点
+    * Parallel Range Query: 多线程并行请求value，利用ssd的random请求要快于hdd的特点
+    * Garbage Collection: 优化点是将key及key-size也存在vLog中，然后对于某个vLog文件，从尾部读取数据，通过LSM-tree查找对应的key，确定此value是否还有效。有效的value放到文件头中。
+    * Crash Consistency: 由于vLog是顺序存储，因此对于数据x丢失后，数据x之后插入的数据都丢失。以LSM-tree中的key为准，若LSM-tree中没有key，则vLog中的key会被丢弃
+# wiscKey主要优化点
+    * vLog value buf： 对写入的数据进行cache，减少磁盘io，缺点是crash可能会引起数据丢失
+    * LSM-tree Log: wiscKey的的LSM-tree不需要先写入tree-log，直接写内存即可。原因是LSM-tree的value file也保存了key信息。
+
+
+

@@ -43,15 +43,25 @@ sst主要分为数据存储区和数据管理区
     相对于单向链表，增加指向下下mode的指针。要求链表有序
 
 读取过程：先找memtable，再查找Immutable，然后由level0~leveln顺序查找。找不到即返回
+存储过程：
+删除过程：
+更新过程：就是新的存储过程，key的合并在compaction进行
 
 
 tips:
 leveldb可能会有key重复。
 
 compaction过程：
-minor compaction: 将memtable数据导出到SSTable文件中(简单将memtable写入level0)
-major compaction：合并不同层级的SSTable文件（L层和L+1层文件合并， 待合并的L层的文件及涉及到的L+1层文件整体合并）
+    * minor compaction: 将memtable数据导出到SSTable文件中(简单将memtable写入level0)
+    * major compaction：合并不同层级的SSTable文件（L层和L+1层文件合并， 待合并的L层的文件及涉及到的L+1层文件整体合并）
                     每次选择合并一个level的，算level_bytes/MaxBytesForLevel(), 下级level比上线level的maxBytes多10倍。
+
+
+启动时会compaction过程
+compaction在新的write请求来的时候，依据各个level的设置，通过load参数先一个最需要compaction的level
+compaction时，会将所有内容均写到一个新的文档中。
+新老file都会存在，作为不同的版本。
+引用老版本的所有compact均析构，最终会把老版本删除
 
 
 to-do

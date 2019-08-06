@@ -1,0 +1,7 @@
+RocksDB支持一次获取多个K-V
+RocksDB除了简单的Put、Delete操作，还提供了一个Merge操作
+RocksDB支持多线程合并，而LevelDB是单线程合并的。
+RocksDB增加了合并时过滤器，对一些不再符合条件的K-V进行丢弃，如根据K-V的有效期进行过滤。
+在故障方面，RocksDB支持增量备份和全量备份，允许将已删除的数据备份到指定的目录，供后续恢复。
+RocksDB支持在单个进程中启用多个实例，而LevelDB只允许单个实例。
+RocksDB支持管道式的Memtable，也就说允许根据需要开辟多个Memtable，以解决Put与Compact速度差异的性能瓶颈问题。
