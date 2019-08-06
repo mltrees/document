@@ -35,6 +35,7 @@ sst
 sst主要分为数据存储区和数据管理区
     数据管理区：数据索引（每个数据块的起始及终止key）
     数据存储区：kv对，及重启点
+最新数据的扩展名是.ldb
 
 
 
@@ -50,6 +51,7 @@ leveldb可能会有key重复。
 compaction过程：
 minor compaction: 将memtable数据导出到SSTable文件中(简单将memtable写入level0)
 major compaction：合并不同层级的SSTable文件（L层和L+1层文件合并， 待合并的L层的文件及涉及到的L+1层文件整体合并）
+                    每次选择合并一个level的，算level_bytes/MaxBytesForLevel(), 下级level比上线level的maxBytes多10倍。
 
 
 to-do

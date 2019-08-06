@@ -255,3 +255,5 @@ job: 查看正在执行的后台进行
 bg 1 后台运行
 fg 1 回到前台支持
 
+查看查文件全路径：readlink -f filename
+
