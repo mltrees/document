@@ -34,6 +34,7 @@ git blame <filename>	查看某文件最后修改提交的日子
 git log -n 1 --stat	查看最近一次提交所有更改过的文件
 git log -p filename 查看某一件的所有历史提交
 git diff HEAD^ -- filename 查看文件与上一版本的修改	
+git add -u  git add -u 提交被修改(modified)和被删除(deleted)文件(不包括新文件)
 
 将review的内容拉下来：
 $ git fetch ssh://zhangmaolin@legit.letv.cn:29418/search_and_rec refs/changes/64/6964/5 && git checkout FETCH_HEAD
