@@ -19,6 +19,8 @@ terminal当前的filder在finder中打开： open .
 键盘左滑、右滑： control+left, control+right
 锁屏 control + command+q
 退出登陆  shift + command + q
+截屏: control + shift + 4(指定截屏，保存在桌面), control + shift + 3
+
 
 
 
