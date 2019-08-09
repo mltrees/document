@@ -1,7 +1,6 @@
 # 基于leveldb，利用ssd随机读写强的特点，做了针对性的优化。
 
 
-# LSM-tree： 是一种架构，而非一个数据结构。中心思想是leveldb的分level的读写。
 # LSM-tree的主要的问题是读写放大（read and write amplification）：读写放大=碰盘实际读写的数据量/用户需要的数据量
     * 读放大： 两个方面。1. 读一个数据，可能需要读各个level的数据；2. 找一个key-value，需要读多个file的索引
     * 写放大： 写本身很快，但如果触发了compaction过程，则会导致写放大

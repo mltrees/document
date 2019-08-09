@@ -45,7 +45,7 @@ i2进制显示binary文件： vim打开后:%!xxd -b
 将某文本内的行按ascii码排序： sort file
 忽略大小写： :set ic (:set ignorecase)
 大小写敏感: :set noic
-
+vim中显示当前文件的路径及名称: control + G
 
 
 
@@ -73,5 +73,6 @@ ctags:
 生成tags： ctags -R
 跳转到函数定义： control + ]
 跳回前文： control + o ; control + t
+
 
 
