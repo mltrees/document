@@ -7,3 +7,7 @@ bazel test //searcher/...
 --cache_test_results=(yes|no|auto) (-t)  强制执行test，不走cache
 
 bazelclean --expunge： 清理cache
+
+
+资料
+bazel C++语法入门: https://www.jianshu.com/p/4e778df3c13b

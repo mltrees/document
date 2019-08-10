@@ -1,0 +1,11 @@
+﻿将远程SMB的分享目录作为本地F盘  NET USE F: \\10.110.98.98\zhangmaolin
+
+
+查看cpu及查看内存：
+1. cmd进入wmic cli:wmic
+查看cpu：
+cpu get *
+查看内存
+memorychip
+设置环境变量：set Path=%Path%;C:\CGAL-3.6.1\auxiliary\gmp\lib
+设置JAVA_HOME:
