@@ -156,6 +156,17 @@ git merge --squash feature
 git merge origin/master --strategy-option=theirs  //  merge远端的代码
 git commit
 
+将两个commit合并成一个
+git rebase --interactive HEAD~2
+# pick b76d157 b
+# pick a931ac7 c
+将pick a931ac7 c修改为squash a931ac7 c(即将pick修改为squash)，细节可看显示的Command
+    #  p, pick = use commit
+    #  r, reword = use commit, but edit the commit message
+    #  e, edit = use commit, but stop for amending
+    #  s, squash = use commit, but meld into previous commit
+    #  f, fixup = like "squash", but discard this commit's log message
+
 整体打印出指定author的所有修改: git log --pretty="%h : %an : %s" --no-merges $pre_launch_prod_commit_id --author="zhaizhiqiang"
 
 git log --pretty=""
