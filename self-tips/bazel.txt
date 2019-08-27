@@ -7,6 +7,7 @@ bazel test //searcher/...
 --cache_test_results=(yes|no|auto) (-t)  强制执行test，不走cache
 
 bazelclean --expunge： 清理cache
+--disk_cache=/export/zml/ 指定cache的目录
 
 
 资料
