@@ -5,9 +5,19 @@ bazel test //searcher/...
 
 --jobs 10 限制job并发数
 --cache_test_results=(yes|no|auto) (-t)  强制执行test，不走cache
+--verbose_failures 打印更多信息
 
 bazelclean --expunge： 清理cache
 --disk_cache=/export/zml/ 指定cache的目录
+
+genrule:
+$(@D) BUILD所在的目录
+$@ WORKSPACE所在目录
+
+BUILD语法
+** 是递归找到文件夹下所有文件
+
+bazel gen rule: https://stackoverflow.com/questions/39109462/bazel-rules-for-the-protobuf-c-compiler
 
 
 资料

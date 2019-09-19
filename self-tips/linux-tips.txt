@@ -256,4 +256,10 @@ bg 1 后台运行
 fg 1 回到前台支持
 
 查看查文件全路径：readlink -f filename
+查看后台执行的命令： jobs
+杀死jobs中执行的命令: kill %1(1为序号)
+转到jobs中的命令: fg 1(1为序号)
+
+
+/etc/sysctl.conf 可修改core_pattern的设置，修改kernel.core_pattern = /export/App/tensorflows/core_tfs_%p_%s_%t 然后 sudo sysctl -p
 

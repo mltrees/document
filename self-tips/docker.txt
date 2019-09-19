@@ -1,0 +1,19 @@
+查找Ubuntu镜像,打开终端命令窗口，输入：docker search ubuntu
+拉取安装ubuntu镜像，输入：docker pull ubuntu
+查看docker已安装的镜像，输入：docker images
+运行ubuntu镜像，输入：docker run -it -d --name myubuntu -p 8088:80 ubuntu
+加载共享文件，运行镜像: docker run -v /Users/zhangmaolin1/src:/mnt -it -d --name myubuntu1 -p 8088:80 ubuntu
+查看所有启动的容器(查看所有容器加 -a)，输入：docker ps
+根据id查看容器信息，输入：docker inspect id(这里的id为64，笔者需要输入实际生成的)
+进入ubuntu(或把容器id改为容器名也可),输入：docker exec -it 64 /bin/bash
+docker安装的也是ubuntu虚拟机，同样适用Linux命令，如退出，输入：exit
+删除container: docker rm id
+给窗口重新命名： docker rename  old_name new_name
+
+
+
+
+
+tips：
+docker拉下ubuntu源并启动后，需先apt-get update更新源,否则会什么都找不到
+

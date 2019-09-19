@@ -1,0 +1,16 @@
+1.  invalid command 'bdist_wheel'
+    sudo pip install --upgrade setuptools
+
+
+
+
+
+fetch packages
+    Fetching https://github.com/c-ares/c-ares/archive/3be1924221e1326df520f8498d704a5c4c8d0cce.tar.gz; 1,317,406b 17s
+    Fetching https://github.com/google/protobuf/archive/48cb18e5c419ddd23d9badcfe4e9df7bde1979b2.tar.gz; 859,126b 16s
+
+    INFO: SHA256 (https://github.com/madler/zlib/archive/cacf7f1d4e3d44d871b605da3b647f07d718623f.tar.gz) = 6d4d6640ca3121620995ee255945161821218752b551a1a180f4215f7d124d45
+INFO: SHA256 (https://github.com/nanopb/nanopb/archive/f8ac463766281625ad710900479130c7fcb4d63b.tar.gz) = 8bbbb1e78d4ddb0a1919276924ab10d11b631df48b657d960e0c795a25515735
+INFO: SHA256 (https://github.com/c-ares/c-ares/archive/3be1924221e1326df520f8498d704a5c4c8d0cce.tar.gz) = e69e33fd40a254fcf00d76efa76776d45f960e34307bd9cea9df93ef79a933f1
+
+Fetching https://github.com/google/protobuf/archive/48cb18e5c419ddd23d9badcfe4e9df7bde1979b2.tar.gz

@@ -8,12 +8,14 @@ git checkout <name>	切换分支
 git checkout -b master_3.0  创建并转换到master_3.0分支
 $ git checkout - -ours xxx/A.java // 抛弃甲的版本，保留乙的
 $ git checkout - -theirs xxx/A.java // 抛弃乙的版本，完全采用甲的
+git checkout -t origin/2.0.0  切到到远程2.0.0分支，本地分支名也为2.0.0
 git reset --hard FETCH_HEAD，FETCH_HEAD表示上一次成功git pull之后形成的commit点(强行回退到HEAD点，放弃本地所有修改，可在git pull 有冲突时使用)。然后git pull.
 在commit之前取消git add：git rm -r --cached .（对应git add 命令 git add .）
 增加commit的注释：git commit --amend
 git log --stat 显示每次更新的文件修改统计信息。
 git mergetool	merge冲突的文件
 git branch  ：查看本地分支
+git checkout -b 本地分支名x origin/远程分支名x, 远程分支名
 git checkout -b temp	将当前目录命名为temp分支
 git checkout master	切换至master分支
 git reflog		查看本地提交的所有log
@@ -218,3 +220,9 @@ git log --pretty=""
     '%ge' reflog identity email
     '%gE' reflog identity email (respecting .mailmap, see git-shortlog[1] or git-blame[1])
     '%gs' reflog subject
+
+install git lfs
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install git-lfs
+git lfs install
+
