@@ -46,6 +46,9 @@ i2进制显示binary文件： vim打开后:%!xxd -b
 忽略大小写： :set ic (:set ignorecase)
 大小写敏感: :set noic
 vim中显示当前文件的路径及名称: control + G
+只匹配词尾： /int\> 
+只匹配词头：\< int
+全词匹配： /\< int\>
 
 
 

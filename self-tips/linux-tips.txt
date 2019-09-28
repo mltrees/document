@@ -3,6 +3,7 @@ rz 从window上传至linux，在linux操作
 sudo chown zhangmaolin:zhangmaolin share, 将share文件夹所有者修改为zhangmaolin，用户组修改为zhangmaolin
 按时间维度排序： ll -t
 按文件大小排序： ll -S
+打印所有的环境变量： env或printenv
 
 
 
