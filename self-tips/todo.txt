@@ -1,2 +1,5 @@
 tensorflow
 leveldb
+
+sublime 快捷键及python的配置
+python常用的包及常用小工具的实际编写
