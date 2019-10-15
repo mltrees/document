@@ -78,4 +78,8 @@ ctags:
 跳回前文： control + o ; control + t
 
 
+awk的时候使用:分隔符 awk -F:
+awk某个文件  awk -f filename
+
+
 

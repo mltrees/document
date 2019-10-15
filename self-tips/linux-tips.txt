@@ -250,6 +250,8 @@ b-a：grep -F -v -f a.txt b.txt | sort | uniq
 
 
 求a.txt内的重复行：  sort a.txt | uniq -d
+uniq一般与sort配合使用
+uniq: -d: 仅显示重复出现的行列，显示一行， -u: 仅显示出一次的行列
 
 搜索大小写任意的vivek或raj：grep -E -i -w 'vivek|raj' /etc/passwd (说明-E 正则表达式，-i: 忽略大小写 -v 反向选择， -a 将binary文件以text文件方式搜寻数据)
 job: 查看正在执行的后台进行
@@ -263,4 +265,5 @@ fg 1 回到前台支持
 
 
 /etc/sysctl.conf 可修改core_pattern的设置，修改kernel.core_pattern = /export/App/tensorflows/core_tfs_%p_%s_%t 然后 sudo sysctl -p
+查看shell执行细节 执行时增加-x或文件头修改为#!/bin/bash -x
 

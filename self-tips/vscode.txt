@@ -2,3 +2,13 @@ shift + option + command + 上/下/左/右  或者 shift + option +  单击/按�
 option+click 在点击位置添加光标
 shift + command + L 选中全部与当前所选内容相同的文本
 shift + option + D 选中下一个与当前所选内容相同的文本
+
+
+vscode mark down all in one
+command+shift+v 看pre-view
+command+m 输入公式
+command+i 斜体
+command+b 粗体
+Ctrl + Shift + ]    标题(uplevel)
+Ctrl + Shift + [    标题(downlevel)
+command+shift+f  格式化表格（表格不需要选中，只要把插入符放在表格内）
