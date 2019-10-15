@@ -12,3 +12,5 @@ command+b 粗体
 Ctrl + Shift + ]    标题(uplevel)
 Ctrl + Shift + [    标题(downlevel)
 command+shift+f  格式化表格（表格不需要选中，只要把插入符放在表格内）
+command_shift+p(打开命令行), Markdown: Print current document to HTML
+markdown转pdf： 先打印成html，然后使用浏览器的打印，保存为pdf插件实现
