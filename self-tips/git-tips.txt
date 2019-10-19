@@ -170,6 +170,7 @@ git rebase --interactive HEAD~2
     #  f, fixup = like "squash", but discard this commit's log message
 
 整体打印出指定author的所有修改: git log --pretty="%h : %an : %s" --no-merges $pre_launch_prod_commit_id --author="zhaizhiqiang"
+打印某时间往后的所有修改，格式为时间、commitid、author、commit： git log --since="Fri Oct 8 00:00:00 2019 +0800" --pretty="%ai : %h : %an : %s"
 
 git log --pretty=""
     '%H' commit hash
