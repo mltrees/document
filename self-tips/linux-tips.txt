@@ -267,3 +267,5 @@ fg 1 回到前台支持
 /etc/sysctl.conf 可修改core_pattern的设置，修改kernel.core_pattern = /export/App/tensorflows/core_tfs_%p_%s_%t 然后 sudo sysctl -p
 查看shell执行细节 执行时增加-x或文件头修改为#!/bin/bash -x
 
+
+
