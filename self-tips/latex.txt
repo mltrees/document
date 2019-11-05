@@ -1,0 +1,8 @@
+从.tex文件生成pdf： xelatex test.tex （使用pdflatex可能会有字体问题）
+
+## install and config: 
+* https://zhuanlan.zhihu.com/p/38178015
+* https://www.jianshu.com/p/11941663b76b
+
+## latex tutorial
+* https://blog.csdn.net/cocoonyang/article/details/78036326

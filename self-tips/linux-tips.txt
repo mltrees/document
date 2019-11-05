@@ -82,6 +82,7 @@ objdump -TC lib.so
 gperf-tools中cpp-profile的命令： LD_PRELOAD=/home/zhangmaolin/usr/local/lib/libprofiler.so.0 CPUPROFILE=./main.prof ./main
 
 查看所有进程的资源消耗情况：top -bn1
+top : top -H 查看线程内的进程情况， top 1 查看cpu的使用情况， top -p pid  查看指定pid的top， top R 反向排序
 查看使用inotify的进程：for foo in /proc/*/fd/*; do readlink -f $foo; done | grep inotify | sort | uniq -c | sort -nr
 查看本地共享内存：ipcs -m，
 删除本地共享内存：ipcrm -M 0x000004d2（0x000004d2为ipcs -m后共享内存key的值,或man一下ipcrm，提示很清楚）
@@ -266,6 +267,12 @@ fg 1 回到前台支持
 
 /etc/sysctl.conf 可修改core_pattern的设置，修改kernel.core_pattern = /export/App/tensorflows/core_tfs_%p_%s_%t 然后 sudo sysctl -p
 查看shell执行细节 执行时增加-x或文件头修改为#!/bin/bash -x
+不解包查看tar包内的文件：  tar -tvf model.tar.gz
+打印进程的各个limit： cat /proc/XXX/limits  XXX 为process pid
+
+新创建user： adduser prefma; passwd prefma
+vim内部使用awk: :%!awk -F'\t' '{print $4}'
+vim统计单词出现的次数: %s/word_key/&/gn
 
 
 
