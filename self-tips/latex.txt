@@ -3,6 +3,11 @@
 ## install and config: 
 * https://zhuanlan.zhihu.com/p/38178015
 * https://www.jianshu.com/p/11941663b76b
+* https://www.zhihu.com/question/318830973
+* https://zhuanlan.zhihu.com/p/64820362
 
 ## latex tutorial
 * https://blog.csdn.net/cocoonyang/article/details/78036326
+
+## latex feature
+* https://my.oschina.net/ZhenyuanLiu/blog/1818097
