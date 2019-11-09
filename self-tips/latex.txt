@@ -8,6 +8,7 @@
 
 ## latex tutorial
 * https://blog.csdn.net/cocoonyang/article/details/78036326
+* https://www.latexstudio.net/archives/7982.html   section 居中
 
 ## latex feature
 * https://my.oschina.net/ZhenyuanLiu/blog/1818097
