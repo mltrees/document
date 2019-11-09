@@ -1,0 +1,1 @@
+ubuntu 启动后重启ssh，以便xshell访问 sudo service ssh restart
