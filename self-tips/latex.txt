@@ -9,6 +9,21 @@
 ## latex tutorial
 * https://blog.csdn.net/cocoonyang/article/details/78036326
 * https://www.latexstudio.net/archives/7982.html   section 居中
+* https://blog.csdn.net/perfumekristy/article/details/8515272
+* https://www.jianshu.com/p/9c5482a31c5b latex排版
 
 ## latex feature
 * https://my.oschina.net/ZhenyuanLiu/blog/1818097
+
+
+下一页： \clearpage
+注释： 单行注释：直接加入%即可；多行注释：使用\usepackage{verbatim}宏包，然后在待注释的部分上加入\begin{comment} ... \end{comment}或使用 \iffalse ….  \fi ，中间部分即被注释掉
+章节： \section{这是第一章节}\subsection{这是次级章节}\subsubsection{这是三级标题}
+项目符号及编号：
+\begin{itemize}
+    \item[*] good morning...
+    \item[*] good morning....
+    \end{itemize}
+
+\begin{enumerate}[fullwidth,itemindent=2em,label=\arabic*)] ... \end{enumerate}
+

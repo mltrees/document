@@ -31,3 +31,11 @@ gdb调试时加入-d参数：加入搜索文件夹
 打印长string: set print element 0
 打印中文: set charset UTF-8
 set max-value-size unlimited (set max-value-size bytes)
+
+info regitsters
+info locals
+break 88 thread 3 当线程3到达源码88行时停止
+gdb内部可以使用source 加载任意位置的.gdbinit
+commands 1: 给第一个断点增加一些命令信息
+
+gdb7.0引入了python
