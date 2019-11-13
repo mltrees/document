@@ -1,0 +1,25 @@
+
+
+## error
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autom4te: need GNU m4 1.4 or later: /usr/bin/m4
+aclocal: error: echo failed with exit status: 1
+autoreconf: aclocal failed with exit status: 1
+
+## solved
+sudo yum install m4
+
+
+## error
+Can't locate Thread/Queue.pm in @INC (@INC contains: /usr/local/share/automake-1.15 /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at /u
+sr/local/bin/automake line 55.
+BEGIN failed--compilation aborted at /usr/local/bin/automake line 58.
+autoreconf: automake failed with exit status: 2
+
+## solved
+ sudo yum install perl-core
+
+
+
