@@ -274,6 +274,7 @@ fg 1 回到前台支持
 新创建user： adduser prefma; passwd prefma
 vim内部使用awk: :%!awk -F'\t' '{print $4}'
 vim统计单词出现的次数: %s/word_key/&/gn
+wget -o outfilename url
 
 
 
