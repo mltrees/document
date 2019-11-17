@@ -135,6 +135,7 @@ auto mounting the ramdisk
 vim /etc/fstab
 none /media/ramdisk tmpfs nodev,nosuid,noexec,nodiratime,size=2048M 0 0
 
+加载iso: sudo mount -t iso9660 -o loop /PATH/oracle 10g.is /data
 查看进程所占内存： pmap -d pid
 查看系统运行的所有线程： ps -xH
 查看某一进程的线程： ps -mq PID

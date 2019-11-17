@@ -1,5 +1,8 @@
 从.tex文件生成pdf： xelatex test.tex （使用pdflatex可能会有字体问题）
 
+## download
+* https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/
+
 ## install and config: 
 * https://zhuanlan.zhihu.com/p/38178015
 * https://www.jianshu.com/p/11941663b76b
