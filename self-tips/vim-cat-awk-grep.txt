@@ -74,6 +74,7 @@ set 当替换的内容有/时，需要使用sed "s#find#$REPLACE#"
 
 ctags:
 生成tags： ctags -R
+加载tag: set tags=绝对路径的tag
 跳转到函数定义： control + ]
 跳回前文： control + o ; control + t
 
