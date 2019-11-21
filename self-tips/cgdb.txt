@@ -25,6 +25,7 @@ gdb调试时加入-d参数：加入搜索文件夹
 
 
 16进制打印5个字符：x/5bx rBase_ 
+打印各个进制: 10进制 /d 16进制 /x 2进制 /t
 
 查看某信号的处理逻辑：info signal SIG40
 忽略SIG40： handle SIG40 noprint nostop
