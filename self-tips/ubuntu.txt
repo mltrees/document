@@ -11,3 +11,5 @@ firefox show icon:
     Terminal=false 
     Type=Application 
     Categories=Application;Network; 
+
+theme download: https://github.com/vinceliuice/grub2-themes
