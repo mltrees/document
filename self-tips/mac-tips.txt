@@ -29,6 +29,7 @@ terminal当前的filder在finder中打开： open .
 打开新的标签页: command+t
 删除到文本末尾：ctrl + k
 删除光标之前的单词：ctrl + w
+reminders.cpp(to do list):到最开头optin+上箭头， 到最下面option+下箭头
 
 
 
