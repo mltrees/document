@@ -1,3 +1,5 @@
 grpc example
 在grpc::CreateChannel的时候，会同步新建grpc_executor和grpc_global_tim
 grpc 的cq_.Next会阻塞在epoll_wait函数处，等待epoll的结果。
+新建几个cq，就会有几个epoll_wait， epoll_wait是真的epoll的接收请求
+当只用一个cq时，会发现epoll_wait等待在同一个epoll_fd上。
