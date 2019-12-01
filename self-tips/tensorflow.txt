@@ -1,0 +1,27 @@
+中文简介： https://blog.csdn.net/u013510838/article/details/84103503
+anaconda mirror: https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 
+
+
+
+tensorflow bazel version
+
+| Version           | Python version | Compiler  | Build tools  |
+| ----------------- | -------------- | --------- | ------------ |
+| tensorflow-2.0.0  | 2.7, 3.3-3.7   | GCC 7.3.1 | Bazel 0.26.1 |
+| tensorflow-1.14.0 | 2.7, 3.3-3.7   | GCC 4.8   | Bazel 0.24.1 |
+| tensorflow-1.13.1 | 2.7, 3.3-3.7   | GCC 4.8   | Bazel 0.19.2 |
+| tensorflow-1.12.0 | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.15.0 |
+| tensorflow-1.11.0 | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.15.0 |
+| tensorflow-1.10.0 | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.15.0 |
+| tensorflow-1.9.0  | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.11.0 |
+| tensorflow-1.8.0  | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.10.0 |
+| tensorflow-1.7.0  | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.10.0 |
+| tensorflow-1.6.0  | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.9.0  |
+| tensorflow-1.5.0  | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.8.0  |
+| tensorflow-1.4.0  | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.5.4  |
+| tensorflow-1.3.0  | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.4.5  |
+| tensorflow-1.2.0  | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.4.5  |
+| tensorflow-1.1.0  | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.4.2  |
+| tensorflow-1.0.0  | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.4.2  |
+
+compile: bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package --local_ram_resources=2048 --cxxopt="-D_GLIBCXX_USE_CXX11_ABI=0"

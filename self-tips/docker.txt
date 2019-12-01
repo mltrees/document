@@ -9,6 +9,7 @@
 docker安装的也是ubuntu虚拟机，同样适用Linux命令，如退出，输入：exit
 删除container: docker rm id
 给窗口重新命名： docker rename  old_name new_name
+停止docker image的运行: sudo docker stop containerId
 
 
 
