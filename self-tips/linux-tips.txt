@@ -275,6 +275,7 @@ fg 1 回到前台支持
 vim内部使用awk: :%!awk -F'\t' '{print $4}'
 vim统计单词出现的次数: %s/word_key/&/gn
 wget -o outfilename url
+标出文件的可执行情况：ls -F, -F开关对可执行文件添加一个*号，为目录添加一个/号，为符号链接添加一个@号
 
 
 
