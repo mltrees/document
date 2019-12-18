@@ -78,6 +78,7 @@ ctags:
 加载tag: set tags=绝对路径的tag
 跳转到函数定义： control + ]
 跳回前文： control + o ; control + t
+查看所有的tags:  :ts   （助记 tags list）
 
 
 awk的时候使用:分隔符 awk -F:

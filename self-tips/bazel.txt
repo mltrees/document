@@ -22,3 +22,5 @@ bazel gen rule: https://stackoverflow.com/questions/39109462/bazel-rules-for-the
 
 资料
 bazel C++语法入门: https://www.jianshu.com/p/4e778df3c13b
+bazel 第三方库的docker: docker pull bazelment/trunk
+bazel blog: https://blog.gmem.cc/bazel-study-note

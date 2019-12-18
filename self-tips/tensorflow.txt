@@ -25,3 +25,5 @@ tensorflow bazel version
 | tensorflow-1.0.0  | 2.7, 3.3-3.6   | GCC 4.8   | Bazel 0.4.2  |
 
 compile: bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package --local_ram_resources=2048 --cxxopt="-D_GLIBCXX_USE_CXX11_ABI=0"
+
+安装时，先安装anaconda，再pip install keras
