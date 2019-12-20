@@ -28,5 +28,7 @@
     \item[*] good morning....
     \end{itemize}
 
+增加一个空行:    \bigskip  \smallskip
+
 \begin{enumerate}[fullwidth,itemindent=2em,label=\arabic*)] ... \end{enumerate}
 
