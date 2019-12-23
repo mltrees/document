@@ -82,7 +82,7 @@ objdump -TC lib.so
 gperf-tools中cpp-profile的命令： LD_PRELOAD=/home/zhangmaolin/usr/local/lib/libprofiler.so.0 CPUPROFILE=./main.prof ./main
 
 查看所有进程的资源消耗情况：top -bn1
-top : top -H 查看线程内的进程情况， top 1 查看cpu的使用情况， top -p pid  查看指定pid的top， top R 反向排序
+top : top -H 查看线程内的进程情况， top 1 查看cpu的使用情况， top -p pid  查看指定pid的top， top R 反向排序 , M 根据驻留内存大小进行排序。P 根据CPU使用百分比大小进行排序。
 查看使用inotify的进程：for foo in /proc/*/fd/*; do readlink -f $foo; done | grep inotify | sort | uniq -c | sort -nr
 查看本地共享内存：ipcs -m，
 删除本地共享内存：ipcrm -M 0x000004d2（0x000004d2为ipcs -m后共享内存key的值,或man一下ipcrm，提示很清楚）
@@ -140,6 +140,7 @@ none /media/ramdisk tmpfs nodev,nosuid,noexec,nodiratime,size=2048M 0 0
 查看系统运行的所有线程： ps -xH
 查看某一进程的线程： ps -mq PID
 查看线程所点资源：top -H
+查看线程数: 2，cat /proc/${pid}/status 其中Threads后面跟的就是线程数。
 
 export LD_PRELOAD=${pwd}libb.so:${LD_PRELOAD}  这个路径指定的so将在所有的so之前加载，并且符号会覆盖后面加载的so文件中的符号。如果可执行文件的权限不合适（SID），这个变量会被忽略。 
 
