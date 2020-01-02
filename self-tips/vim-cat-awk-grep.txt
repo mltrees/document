@@ -9,6 +9,7 @@
 下一行；ctrl+e
 上一行：ctrl+y
 下一页：ctrl+b
+查看的行居中: zz
 
 空格：\s
 

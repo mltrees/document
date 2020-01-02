@@ -2,7 +2,8 @@
 最大化不全屏 option+shift+最大化
 修改default shell chsh -s /bin/zsh
 最小化： command + Option + M
-最大化： command + control + f, terminal2(command+enter)
+最大化： command + control + f, 
+全屏: terminal2(command+enter)
 锁屏： control + shift + power
 pageup: fn+向上箭头
 pagedown:fn+向下箭头
