@@ -1,2 +1,18 @@
 显示安装的插件: about:plugins
 显示禁用的选项： about:config
+打开书签快捷键: command+b
+
+
+vixen fastkey
+聚焦到第一个可输入的对话框: gi
+打开网址: o,t,w(当前网页打开，新tab打开，新window打开)
+到下一个tab: J, control + tab
+到前一个tab: K, control + shift + tab
+放大： zi
+缩小： zo
+恢复100%： zz
+关闭tab: D(或d) 区别在于D关闭后，打开的是左边的tab，d打开的是右边的tab
+当前网页再打开一个: zd
+当前网页的父目录(即当前网页的上一目录): gu
+当前网页的根目录: gU
+
