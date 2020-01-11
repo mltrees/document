@@ -21,3 +21,10 @@ raw https://raw.githubusercontent.com/vbay/CSDN-CODE/master/Ubuntu18.04-tutorial
 显示桌面： win+D（需要设置）
 最大化在左半面： win+左箭头
 最大化在右半面： win+右箭头
+
+
+ubuntu install chrome
+sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
+sudo apt update
+sudo apt install google-chrome-stable
