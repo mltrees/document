@@ -1,0 +1,14 @@
+拉取数据:  ipfs get QmWHt5qYhP9Jk7s7U9ri8GMY2acD6KsbegCruRP4ouMVAn(hash code)
+ls：       ipfs ls QmWHt5qYhP9Jk7s7U9ri8GMY2acD6KsbegCruRP4ouMVAn
+add :
+加模型时： 加个参数不用永远保存
+
+1. ipfs config（bootstrap swarm.key）用于连接私有集群
+2. ipfs init创建初始目录，IPFS_PATH用来指定目录放在哪
+3. 将bootstrap和swarm.key写到配置里面
+4. ipfs deamon 可以后台运行
+
+
+检测是否连接: ipfs swarm peers 检查现在连接的集群结点有多少。初始只有一个，如果用了ipfs get后，会有多个
+
+
