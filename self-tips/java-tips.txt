@@ -11,6 +11,8 @@ java包含jar包  java -cp'.:java.jar'
 
 maven创建命令：
 mvn archetype:generate -DgroupId=com.efn -DartifactId=study
+maven中的${project.groupId} 和 ${project.version} 表示当前项目的groupId和版本
+
 
 eclipse导入maven工程：import->maven工程
 编译maven工程：右键pom.xml，然后选择run as->maven build

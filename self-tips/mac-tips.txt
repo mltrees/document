@@ -10,6 +10,8 @@ pagedown:fn+向下箭头
 前往特定的文件夹：shift+command+G，可能需要在访达页面才行
 隐藏当前窗口 command+H
 隐藏其它窗口option + command + H
+同一应用不同标签的切换: command + ~ (或control + 下箭头)
+不同应用之前的切换: command + tab(control + 上箭头)
 打开spotlight command + space
 修改hostname等：
 sudo scutil --set ComputerName "newname"

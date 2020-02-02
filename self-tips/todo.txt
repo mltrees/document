@@ -4,3 +4,11 @@ leveldb
 sublime 快捷键及python的配置
 python常用的包及常用小工具的实际编写
 tensorflow https://bookdown.org/leovan/TensorFlow-Learning-Notes/4-5-deploy-tensorflow-serving.html
+
+todo 
+storm install and hello-world
+hadoop install and hello-world
+kafka install and hello-world
+flink install and hello-world
+spark install and hello-world
+tensorflow install and hello-world
