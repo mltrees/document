@@ -12,3 +12,8 @@ kafka install and hello-world
 flink install and hello-world
 spark install and hello-world
 tensorflow install and hello-world
+
+
+京东广告推荐机器学习系统实践: http://bigdata.it168.com/a2016/0913/2915/000002915998.shtml
+
+机器消耗和得到收益之间的评估方

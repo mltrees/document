@@ -1,5 +1,6 @@
 mvn跳过测试：mvn package -Dmaven.test.skip=true
 java包含jar包  java -cp'.:java.jar'
+使用mvn运行: mvn exec:java -Dexec.mainClass="kafka.KafkaProducerExample"
 
 
 
@@ -78,5 +79,11 @@ jmap -histo 462521
 查看里面线程数：jstack pid
 生成dump文件：jmap -dump:format=b,file=dump.bin 462521
 解析dump文件： jhat -J-Xmx20480M dump.bin
+
+
+
+
+错误处理:
+IDEA Error:java: Compilation failed: internal java compiler error: 解决方法： pom中增加maven-compiler-plugin指定编译的java的版本
 
 

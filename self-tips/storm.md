@@ -5,8 +5,12 @@ storm ui&
 查看storm界面:
 http://localhost:8080
 
+本地运行storm程序: storm local target/storm-HelloWorld-2.1.0.jar com.storm.test.helloworld.WordCountTopology (其中，com.storm.test.helloworld是package名称，.WordCountTopology是有main的类名)
+集群运行storm程序: storm jar
+
 ## storm tutorial
 https://storm.apache.org/releases/current/Tutorial.html
+https://www.tutorialspoint.com/apache_storm/apache_storm_installation.htm
 
 ### spout
 输入数据的初始处理，将输入数据变为stream，供bolt使用

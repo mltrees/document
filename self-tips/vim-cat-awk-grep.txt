@@ -88,6 +88,7 @@ ctags:
 
 
 awk的时候使用:分隔符 awk -F:
+awk的时候使用tab分隔符 awk -F'\t'
 awk某个文件  awk -f filename
 
 
