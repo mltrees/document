@@ -1,3 +1,5 @@
+## start zookeeper
+
 ## start standalone storm
 storm nimbus&
 storm supervisor&
@@ -26,7 +28,9 @@ topology中每个结点均是并行计算,可以在计算之初指定并行的�
 
 
 ### todo
-mvn package 可打包成功，但使用jidea会失效
+mvn package 可打包成功，但使用jidea会失效 (己解决，删除package再重新下载后ideaj编译成功)
+了解storm的ack机制
+
 
 
 

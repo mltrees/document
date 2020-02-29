@@ -2,6 +2,10 @@ shift + option + command + 上/下/左/右  或者 shift + option +  单击/按�
 option+click 在点击位置添加光标
 shift + command + L 选中全部与当前所选内容相同的文本
 shift + option + D 选中下一个与当前所选内容相同的文本
+command+F 查找
+option+command+F 替换
+
+
 
 
 vscode mark down all in one

@@ -29,6 +29,11 @@ git branch -d dev	删除dev分支
 git stash		暂存正在进行的工作
 git stash list		列出正在进行的工作
 git stash pop		恢复git stash内容，并将stash里的内容删除
+// git stash 查看时间
+git stash list --date=relative
+git stash list --date=short
+git stash list --date=local
+
 git remote		查看远程分支信息
 git fetch & git commit origin/dev 切换到远端的dev分支
 git checkout develop && git merge feature/login 将feature/login的分支merge到develop分支上

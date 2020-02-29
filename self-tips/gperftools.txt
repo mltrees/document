@@ -27,3 +27,9 @@ env HEAPCHECK=normal ./a.out
 
 
 env  LD_PRELOAD=/home/zhangmaolin/usr/local/lib/libtcmalloc.so HEAPPROFILE=./nginx.heap LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH   /export/servers/openresty/nginx/sbin/nginx -c /export/servers/openresty/nginx/conf/nginx.conf
+
+
+
+Õý³£±àÒëperftest
+
+
