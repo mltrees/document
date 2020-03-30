@@ -7,7 +7,7 @@ java包含jar包  java -cp'.:java.jar'
 远程debug：
 1. linux内带debug端口启动
 2. 打开git bash
-3. 输入命令：ssh -L 8000:10.187.3.18:30909 chenlu62@jps.jd.com -p 80，其中10.187.3.18为远端ip，30909为远端开启的调试端口，chenlu62为堡垒机的名称
+3. 输入命令：ssh -L 8000:11.20.246.133:8000 zhangmaolin7@jps.jd.com -p 80，其中10.187.3.18为远端ip，第2个8000为远端开启的调试端口
 4. 启动jidea远端调试代码
 
 maven创建命令：

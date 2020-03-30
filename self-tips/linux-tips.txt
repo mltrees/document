@@ -84,6 +84,7 @@ gperf-tools中cpp-profile的命令： LD_PRELOAD=/home/zhangmaolin/usr/local/lib
 查看所有进程的资源消耗情况：top -bn1
 top : top -H 查看线程内的进程情况， top 1 查看cpu的使用情况， top -p pid  查看指定pid的top， top R 反向排序 , M 根据驻留内存大小进行排序。P 根据CPU使用百分比大小进行排序。
 查看使用inotify的进程：for foo in /proc/*/fd/*; do readlink -f $foo; done | grep inotify | sort | uniq -c | sort -nr
+sort: -rh 按文件大小排序
 查看本地共享内存：ipcs -m，
 删除本地共享内存：ipcrm -M 0x000004d2（0x000004d2为ipcs -m后共享内存key的值,或man一下ipcrm，提示很清楚）
 sem_open的文名sem.file存放在/dev/shm目录下。
@@ -196,6 +197,8 @@ ctrl+shift+n=新终端（terminal，在当前终端目录打开）
 
 ctrl+c=终止
 grep "aa" -C 4  打印aa上下文各4行的数据
+grep -c 只显示行号
+grep -l 只显示文件名
 fix error Binary file matches : grep -a a.log (grep -a -a的意思是让二进制文件等价于文本文件)
 
 使用curl上传文件： curl -v -F key1=value1 -F upload=@localfilename URL

@@ -36,6 +36,7 @@ uncomment "bind-address>-->---= 127.0.0.1"
 查看mysql的超时时间：show global variables like '%timeout';
 查看数据库文件位置: show global variables like "%datadir%";
 MySQL删除数据库时无响应解决办法:执行show full processlist观察state和info两列，查看有哪些线程在运行。可以是由于线程网络中断锁表
+mysql -h url -u username -ppassword -P3306
 
 
 root密码：password

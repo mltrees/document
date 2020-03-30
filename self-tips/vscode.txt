@@ -4,6 +4,20 @@ shift + command + L 选中全部与当前所选内容相同的文本
 shift + option + D 选中下一个与当前所选内容相同的文本
 command+F 查找
 option+command+F 替换
+撤消: command + z
+取消撤消: command + shift + z
+到行头: command + 左箭头
+到行尾: command + 右箭头
+美化json: command + shift + F(当非.json文件时，需要command+p调出命令栏，然后选择>Pretty json)
+在侧边栏新打开文件: command + 鼠标单击
+全屏: control+command+F
+选择语言栏: 在右下角(快捷键: command+K M, 即先同时按command+K，然后松开再按m)
+find: command+f
+find in files: shift+option+F
+format code: shift + command + F
+
+
+
 
 
 
