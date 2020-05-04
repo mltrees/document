@@ -29,6 +29,7 @@ git branch -d dev	删除dev分支
 git stash		暂存正在进行的工作
 git stash list		列出正在进行的工作
 git stash pop		恢复git stash内容，并将stash里的内容删除
+git stash show -p stash@{1}     查看git stash内的内容
 // git stash 查看时间
 git stash list --date=relative
 git stash list --date=short
@@ -232,5 +233,7 @@ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.s
 sudo apt-get install git-lfs
 git lfs install
 git-server: https://www.liaoxuefeng.com/wiki/896043488029600/899998870925664
+git cherry-pick 仅同步某一提交
+git cherry-pick –continue, –abort (与git rebase的continue, abort类似)
 
 

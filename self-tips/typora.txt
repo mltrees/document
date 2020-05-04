@@ -1,0 +1,3 @@
+新增表格: option+command+T
+源码格式与视图格式的转化: command + /
+

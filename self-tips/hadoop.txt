@@ -1,0 +1,3 @@
+连接hive: hive
+查看表的细节: desc app.jd_app_click_quality_feature_user_sku
+查看表的几个内容: hadoop fs -cat /user/recsys/recpro/unifiedfeed/itemprofile/customlist_hmzj_fea_c/000000_0 | head -n 10

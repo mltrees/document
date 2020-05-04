@@ -1,0 +1,8 @@
+turorial: https://www.tutorialspoint.com/apache_flink/apache_flink_quick_guide.htm
+
+download: flink-1.10.0-bin-scala_2.11.tgz
+start: cd flink-1.10.0 & ./bin/start-cluster.sh
+
+url: http://localhost:8081
+
+
