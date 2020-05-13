@@ -237,3 +237,6 @@ git cherry-pick 仅同步某一提交
 git cherry-pick –continue, –abort (与git rebase的continue, abort类似)
 
 
+# 改地址后
+    git submodule sync 再 git submodule update，否则会报错: Fetched in submodule path 'tps_proxy', but it did not contain 4c2be7bda7e8b94309dd185a71ae429082f5d00d. Direct fetching of that commit failed.
+
