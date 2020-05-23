@@ -80,10 +80,19 @@ jmap -histo 462521
 生成dump文件：jmap -dump:format=b,file=dump.bin 462521
 解析dump文件： jhat -J-Xmx20480M dump.bin
 
+java maven生成一个完整包，包含external 依赖的
+使用build plugin "maven-assembly-plugin", 同时配合assemble.xml
+
+
+## java异步
+主要有原生，guava future和twitter这3个，guava future有一个SettableFuture，可以实现类似Promise的功能。
 
 
 
+ideaj 相关
 错误处理:
 IDEA Error:java: Compilation failed: internal java compiler error: 解决方法： pom中增加maven-compiler-plugin指定编译的java的版本
+代码内import的时候类名是全名： Editor->Code Style->Java,选择import选项卡，不勾选Use Full qualified class name
+防止多个import合并成*: Setting->Code Stype->Java 选择Class count to use import with "*" 数值大一些
 
 
