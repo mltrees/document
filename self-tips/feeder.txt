@@ -1,9 +1,18 @@
+tips:
+离线导数打jar包:
+把src/main/assembly/bin/* 与/target/Feed-MR.jar拷贝到一个目录下，然后“zip Feed-MR-All.zip *” 打包。看打包的具体内容可以vim Feed-MR-All.zip
+
+
 # realtime上线：
 ## 测试
 1. 修改clientId
 2. 修改jimdb配置
 3. 上传脚本
 4. 脚本发布
+
+
+离线导数看log
+1. 点击任务图标，再点击 “任务运行”, 找到log url，使用 jd proxy， 打开log url，看到log
 
 
 todo:

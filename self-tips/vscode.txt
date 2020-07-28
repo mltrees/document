@@ -16,9 +16,8 @@ find: command+f
 find in files: shift+option+F
 format code: shift + command + F
 自动换行与不换行切换: alt + z(windows下)
-
-
-
+向右切换tab页: option+command+右箭头
+向左切换tab页: option+command+左箭头
 
 
 

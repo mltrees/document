@@ -152,6 +152,8 @@ git fsck --unreachable --no-reflogs --no-cache HEAD | fgrep " tree " \
 git log commit tree
 git log --all --decorate --oneline --graph --date-order $( git fsck | awk '/dangling commit/ {print $3}'; git log -g --pretty='format:%H' )
 
+看不同commit的merge情况 git log --all --decorate --oneline --graph
+
 生成sshkey： ssh-keygen -t rsa
 
 将两个gerrit合并一个（两个branch合并）
@@ -235,6 +237,7 @@ git lfs install
 git-server: https://www.liaoxuefeng.com/wiki/896043488029600/899998870925664
 git cherry-pick 仅同步某一提交
 git cherry-pick –continue, –abort (与git rebase的continue, abort类似)
+git log --stat --summary 查看历史所有修改
 
 
 # 改地址后

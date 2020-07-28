@@ -1,0 +1,55 @@
+
+1、java垃圾回收算法
+https://www.jianshu.com/p/114bf4d9e59e
+
+2、java线程池基本参数
+corePoolSize（必需）：核心线程数。默认情况下，核心线程会一直存活，但是当将allowCoreThreadTimeout设置为true时，核心线程也会超时回收。
+maximumPoolSize（必需）：线程池所能容纳的最大线程数。当活跃线程数达到该数值后，后续的新任务将会阻塞。
+keepAliveTime（必需）：线程闲置超时时长。如果超过该时长，非核心线程就会被回收。如果将allowCoreThreadTimeout设置为true时，核心线程也会超时回收。
+unit（必需）：指定keepAliveTime参数的时间单位。常用的有：TimeUnit.MILLISECONDS（毫秒）、TimeUnit.SECONDS（秒）、TimeUnit.MINUTES（分）。
+workQueue（必需）：任务队列。通过线程池的execute()方法提交的Runnable对象将存储在该参数中。
+threadFactory（可选）：线程工厂。用于指定为线程池创建新线程的方式。
+handler（可选）：拒绝策略。当达到最大线程数时需要执行的饱和策略。
+
+
+3、hashMap如何put？
+①.判断键值对数组table[i]是否为空或为null，否则执行resize()进行扩容；
+②.根据键值key计算hash值得到插入的数组索引i，如果table[i]==null，直接新建节点添加，转向⑥，如果table[i]不为空，转向③；
+③.判断table[i]的首个元素是否和key一样，如果相同直接覆盖value，否则转向④，这里的相同指的是hashCode以及equals；
+④.判断table[i] 是否为treeNode，即table[i] 是否是红黑树，如果是红黑树，则直接在树中插入键值对，否则转向⑤；
+⑤.遍历table[i]，判断链表长度是否大于8，大于8的话把链表转换为红黑树，在红黑树中执行插入操作，否则进行链表的插入操作；遍历过程中若发现key已经存在直接覆盖value即可；
+⑥.插入成功后，判断实际存在的键值对数量size是否超多了最大容量threshold，如果超过，进行扩容。
+解决冲突：拉链法
+
+1.7头插法，1.8尾插法。table size的值是否大于64，jdk 1.7没有红黑树。hashCode通过对2^n的左移右移，求交与求异或，实现对2^n的取余操作。
+
+4、如何使用线程安全的map？三种方法
+//Hashtable
+Map<String, String> hashtable = new Hashtable<>();
+//synchronizedMap
+Map<String, String> synchronizedHashMap = Collections.synchronizedMap(new HashMap<String, String>());
+//ConcurrentHashMap
+Map<String, String> concurrentHashMap = new ConcurrentHashMap<>();
+
+5、volatile作用？
+volatile：
+一旦一个共享变量（类的成员变量、类的静态成员变量）被volatile修饰之后，那么就具备了两层语义：
+1）保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。
+2）禁止进行指令重排序。
+
+6、volatile跟synchronized的区别：
+1）volatile本质是在告诉jvm当前变量在寄存器（工作内存）中的值是不确定的，需要从主存中读取； synchronized则是锁定当前变量，只有当前线程可以访问该变量，其他线程被阻塞住。
+2）volatile仅能使用在变量级别；synchronized则可以使用在变量、方法、和类级别的
+3）volatile仅能实现变量的修改可见性，不能保证原子性；而synchronized则可以保证变量的修改可见性和原子性
+4）volatile不会造成线程的阻塞；synchronized可能会造成线程的阻塞。
+5）volatile标记的变量不会被编译器优化；synchronized标记的变量可以被编译器优化
+
+7、synchronized锁优化的方式
+https://juejin.im/entry/5acde01a51882555867fc924
+
+
+
+
+
+
+
