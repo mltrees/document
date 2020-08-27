@@ -20,6 +20,11 @@
 * kernel_is_async kernel可以配置成是异步的, 关注complete及NodeDone函数的使用，ExecutorState::Process
 * kernel op的async化？
 
+## 从源码构建
+* bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+* ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+* pip install pip install /tmp/tensorflow_pkg/tensorflow-1.15.0-cp37-cp37m-macosx_10_7_x86_64.whl
+
 
 
 
@@ -61,6 +66,15 @@ executor 第一次create，第二次直接使用？
 executor: step_id, call_frame, redezvous
 
 tensorflow 如何编译进eigen
+
+# 报错及解决
+
+* ImportError: Could not import tensorflow. Do not import tensorflow from its source directory; change directory to outside the TensorFlow source tree, and relaunch your Python interpreter from there
+
+解决： 不在tensorflow的源码目录下加载代码
+
+
+
 
 
 
