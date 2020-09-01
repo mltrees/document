@@ -257,3 +257,7 @@ git fork同步origin分支
 
     git rebase upstream/master
 
+# 删除remote upstream分支
+    git remote -v  查看所有的分支名
+    git remote rm upstream  删除upstream分支
+
