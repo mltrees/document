@@ -1,0 +1,5 @@
+卷积神经网络的起源论文: Gradient-Based Learning Applied to Document Recognition
+卷积重要发展：ImageNet Classification with Deep ConvolutionalNeural Networks
+卷积网络的发展2：VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION
+NIN: Network In Network
+google图像处理夺冠的文章: Going deeper with converlutions
