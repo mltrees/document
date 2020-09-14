@@ -16,7 +16,7 @@ nc传送文件
 目的主机监听
 nc -l 监听端口<未使用端口>  > 要接收的文件名
 nc -l 4444 > cache.tar.gz
- 
+
 源主机发起请求
 nc  目的主机ip    目的端口 < 要发送的文件
 nc  192.168.0.85  4444 < /root/cache.tar.gz
@@ -34,13 +34,13 @@ tree        以树形显示目录结构
 查看系统页大小：getconf PAGESIZE
 查看端口占用情况：netstat -apn
 shell内置参数
-linux系统除了提供位置参数还提供内置参数，内置参数如下：　
-        $# ----传递给程序的总的参数数目 　
-   　  $? ----上一个代码或者shell程序在shell中退出的情况，如果正常退出则返回0，反之为非0值。 　　
-         $* ----传递给程序的所有参数组成的字符串。 　　
-        $n ----表示第几个参数，$1 表示第一个参数，$2 表示第二个参数 ... 　　$0 ----当前程序的名称 　　
-         $@----以"参数1" "参数2" ... 形式保存所有参数 　　
-         $$ ----本程序的(进程ID号)PID 　　
+linux系统除了提供位置参数还提供内置参数，内置参数如下:
+        $# ----传递给程序的总的参数数目
+   　  $? ----上一个代码或者shell程序在shell中退出的情况，如果正常退出则返回0，反之为非0值.
+         $* ----传递给程序的所有参数组成的字符串。
+        $n ----表示第几个参数，$1 表示第一个参数，$2 表示第二个参数 ... 　　$0 ----当前程序的名称
+         $@----以"参数1" "参数2" ... 形式保存所有参数
+         $$ ----本程序的(进程ID号)PID
          $! ----上一个命令的PID
 
 PKG_CONFIG_PATH	: pkg-config search path
@@ -71,7 +71,7 @@ ump后端服务的搭建：
 
 自己压测命令：
 安装ab：yum -y install httpd-tools
- 
+
  查看内存：ps -e -o 'pid,comm,args,pcpu,rsz,vsz,stime,user,uid'
 
 查看.so或可执行文件内的详细内容：
@@ -113,7 +113,7 @@ valgrind参数：valgrind --log-file=val.log --leak-check=full ./prediction_serv
 
 vim molokai配色：https://github.com/tomasr/molokai
 查看java版本：java -version
-java命令行运行：java -cp .;myClass.jar packname.mainclassname  
+java命令行运行：java -cp .;myClass.jar packname.mainclassname
 
 kill -19 pid 停止指定pid的进程运行（进程在，但不运行）
 kill -18 pid 恢复指定pid的进行
@@ -143,7 +143,7 @@ none /media/ramdisk tmpfs nodev,nosuid,noexec,nodiratime,size=2048M 0 0
 查看线程所点资源：top -H
 查看线程数: 2，cat /proc/${pid}/status 其中Threads后面跟的就是线程数。
 
-export LD_PRELOAD=${pwd}libb.so:${LD_PRELOAD}  这个路径指定的so将在所有的so之前加载，并且符号会覆盖后面加载的so文件中的符号。如果可执行文件的权限不合适（SID），这个变量会被忽略。 
+export LD_PRELOAD=${pwd}libb.so:${LD_PRELOAD}  这个路径指定的so将在所有的so之前加载，并且符号会覆盖后面加载的so文件中的符号。如果可执行文件的权限不合适（SID），这个变量会被忽略。
 
 清屏： ctrl + l
 
@@ -176,24 +176,24 @@ setTimeout(function(){$('#clockIn').trigger('click');},1000*60*60*2)
 setTimeout(function(){$('a')[1].click();},1000*60*60*2)
 
 terminal quick
-tab=补全 
-ctrl+a=开始位置 
-ctrl+e=最后位置 
-ctrl+k=删除此处至末尾所有内容 
-ctrl+u=删除此处至开始所有内容 
+tab=补全
+ctrl+a=开始位置
+ctrl+e=最后位置
+ctrl+k=删除此处至末尾所有内容
+ctrl+u=删除此处至开始所有内容
 ctrl+d=删除当前字母 （没有字母时为关闭终端）
-ctrl+w=删除此处到左边的单词 
-ctrl+y=粘贴由ctrl+u，ctrl+d，ctrl+w删除的单词 
-ctrl+l=相当于clear 
-ctrl+b=向回移动 
-ctrl+f=向前移动 
-ctrl+p=向上显示缓存命令 
-ctrl+n=向下显示缓存命令 
-shift+上或下=终端上下滚动 
-shift+pgup或pgdown=终端上下翻页滚动 
+ctrl+w=删除此处到左边的单词
+ctrl+y=粘贴由ctrl+u，ctrl+d，ctrl+w删除的单词
+ctrl+l=相当于clear
+ctrl+b=向回移动
+ctrl+f=向前移动
+ctrl+p=向上显示缓存命令
+ctrl+n=向下显示缓存命令
+shift+上或下=终端上下滚动
+shift+pgup或pgdown=终端上下翻页滚动
 ctrl+alt+t=新终端（terminal）
 
-ctrl+shift+n=新终端（terminal，在当前终端目录打开） 
+ctrl+shift+n=新终端（terminal，在当前终端目录打开）
 
 ctrl+c=终止
 grep "aa" -C 4  打印aa上下文各4行的数据

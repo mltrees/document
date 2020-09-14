@@ -7,6 +7,7 @@
 锁屏： control + shift + power
 pageup: fn+向上箭头
 pagedown:fn+向下箭头
+打开调度中心: control + 上键头
 前往特定的文件夹：shift+command+G，可能需要在访达页面才行
 隐藏当前窗口 command+H
 隐藏其它窗口option + command + H
@@ -38,7 +39,7 @@ finder(访达):
     前一打开的目录: command + [
     后一打开的目录: command + ]
 
-当前目录下所有文件夹的大小 -d 指深度，后面加一个数值 du -d 1 -h 
+当前目录下所有文件夹的大小 -d 指深度，后面加一个数值 du -d 1 -h
 
 
 

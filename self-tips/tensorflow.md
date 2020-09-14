@@ -84,6 +84,18 @@ MNIST 数据集可在 http://yann.lecun.com/exdb/mnist/ 获取, 它包含了四�
     Test set images: t10k-images-idx3-ubyte.gz (1.6 MB, 解压后 7.8 MB, 包含 10,000 个样本)
     Test set labels: t10k-labels-idx1-ubyte.gz (5KB, 解压后 10 KB, 包含 10,000 个标签)
 
+## tf可以通过keras来获取mnist数据集，方法是
+
+```python
+from keras.datasets import mnist
+import numpy as np
+(x_train, _), (x_test, _) = mnist.load_data()
+```
+
+
+
+下载位置在: ~/.keras/datasets/
+
 
 # work reference
 原生tensorflow对saved_model.pb大小有限制

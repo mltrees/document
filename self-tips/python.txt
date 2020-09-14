@@ -12,4 +12,6 @@ shutil: 高级文件操作模块（新建/删除/查看文件属性，以及移�
 logging: Python内置的标准模块，主要用于输出运行日志，可以设置输出日志的等级、日志保存路径、日志文件回滚等；
 kazoo: zookeeper client模块
 
+numpy.ndarray返回大小： x.size, 返回3个维度的大小 x.shape
+
 

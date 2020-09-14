@@ -1,7 +1,9 @@
-shift + option + command + 上/下/左/右  或者 shift + option +  单击/按住鼠标左键拖动  在当前光标位置和鼠标点击（或拖动）位置创建多行块级选择区域 
+shift + option + command + 上/下/左/右  或者 shift + option +  单击/按住鼠标左键拖动  在当前光标位置和鼠标点击（或拖动）位置创建多行块级选择区域
 option+click 在点击位置添加光标
 shift + command + L 选中全部与当前所选内容相同的文本
 shift + option + D 选中下一个与当前所选内容相同的文本
+command+p: 打开命令行输入框
+shift + command + P : 打开命令行输入,并在开头输入">"(意思是输入命令)
 command+F 查找
 option+command+F 替换
 撤消: command + z
@@ -11,7 +13,7 @@ option+command+F 替换
 美化json: command + shift + F(当非.json文件时，需要command+p调出命令栏，然后选择>Pretty json)
 在侧边栏新打开文件: command + 鼠标单击
 全屏: control+command+F
-选择语言栏: 在右下角(快捷键: command+K M, 即先同时按command+K，然后松开再按m)
+选择语言栏: 在右下角(快捷键: command+K M, 即先同时按command+K，然后松开再按m) (可选json c++等)
 find: command+f
 find in files: shift+option+F
 format code: shift + command + F
@@ -32,3 +34,8 @@ Ctrl + Shift + [    标题(downlevel)
 command+shift+f  格式化表格（表格不需要选中，只要把插入符放在表格内）
 command_shift+p(打开命令行), Markdown: Print current document to HTML
 markdown转pdf： 先打印成html，然后使用浏览器的打印，保存为pdf插件实现
+
+
+
+externals
+Material Icon Theme : 使侧边栏好看
