@@ -1,5 +1,5 @@
 open image: xdg-open $file
-firefox show icon:
+## firefox show icon:
     1.输入：cd /usr/share/applications
     2.输入：sudo vi firefox.desktop 
     在vi里面输入以下内容，然后保存并退出：
@@ -11,20 +11,25 @@ firefox show icon:
     Terminal=false 
     Type=Application 
     Categories=Application;Network; 
-
-theme download: https://github.com/vinceliuice/grub2-themes
 18.04 壁纸美化: https://www.cnblogs.com/feipeng8848/p/8970556.html
 raw https://raw.githubusercontent.com/vbay/CSDN-CODE/master/Ubuntu18.04-tutorials-themes/%E5%A3%81%E7%BA%B8/HighSierra-wallpapers.tar.xz
 
-快捷键:
+## 快捷键:
 最大化: alt + 上箭头
 显示桌面： win+D（需要设置）
 最大化在左半面： win+左箭头
 最大化在右半面： win+右箭头
 
 
-ubuntu install chrome
+## ubuntu install chrome
 sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
 sudo apt update
 sudo apt install google-chrome-stable
+
+
+## ubuntu修改PgUp至左箭头，PgDown至右键头，避免有些键位误按按错
+* sudo vim /usr/share/X11/xkb/symbols/pc
+* 找到 key<PGUP> 将Prior改为Left
+* 找到 key<PGDN> 将Next改为Right
+* 保存
