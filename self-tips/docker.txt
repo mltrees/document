@@ -1,3 +1,4 @@
+# common command
 查找Ubuntu镜像,打开终端命令窗口，输入：docker search ubuntu
 拉取安装ubuntu镜像，输入：docker pull ubuntu
 查看docker已安装的镜像，输入：docker images
@@ -11,7 +12,18 @@ docker安装的也是ubuntu虚拟机，同样适用Linux命令，如退出，输
 给窗口重新命名： docker rename  old_name new_name
 停止docker image的运行: sudo docker stop containerId
 
+# images
+# 保存image
+保存repository名为centos, tag为test的image: docker save centos:test -o centos.test.tar
+查看docker image的配置: docker inspect centos:test
 
+
+删除指定的container: docker container rm containerId
+
+## 加载images
+
+1. 加载名为centos.tar的image: docker image load --input centos.tar
+2. image运行在container中: docker run -v /Users/zhangmaolin1/src:/mnt -it -d --name mycentos -p 8088:80 centos:latest
 
 
 
