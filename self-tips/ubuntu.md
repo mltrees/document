@@ -33,3 +33,8 @@ sudo apt install google-chrome-stable
 * 找到 key<PGUP> 将Prior改为Left
 * 找到 key<PGDN> 将Next改为Right
 * 保存
+
+## wbpy输入法取消４码自动上屏
+* 进入　"input method configuration", select "WubiPinyin"
+* 弹出的对话框选中 "table/wbpy.conf"选择下面的设置
+* Auto Send Candidate Word 复选框取消．则后续都需要点击空格才能上屏
