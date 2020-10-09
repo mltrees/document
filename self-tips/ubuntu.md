@@ -38,3 +38,6 @@ sudo apt install google-chrome-stable
 * 进入　"input method configuration", select "WubiPinyin"
 * 弹出的对话框选中 "table/wbpy.conf"选择下面的设置
 * Auto Send Candidate Word 复选框取消．则后续都需要点击空格才能上屏
+
+## ubuntu restart docker with snap
+sudo snap start docker

@@ -29,6 +29,15 @@ docker安装的也是ubuntu虚拟机，同样适用Linux命令，如退出，输
 
 tips：
 docker拉下ubuntu源并启动后，需先apt-get update更新源,否则会什么都找不到
+docker save
+
+
+＃ 设置docker免sudo运行
+    *sudo groupadd docker
+    *sudo gpasswd -a ${USER} docker
+    *sudo snap stop docker
+    *sudo snap start docker
+    *newgrp - docker
 
 
 restart docker:
