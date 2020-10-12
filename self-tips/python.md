@@ -21,7 +21,10 @@ a矩阵的转置： numpy.array(a).T
 # matploylib
 
 ## tips
+### matplotlib
 python使用交互terminal绘图时，只显示
 <matplotlib.collections.PathCollection object at 0x11b64b320>
 此时，可再调用 plt.show() 即可显示所绘制图形
+
+imshow()实现热图的绘制
 

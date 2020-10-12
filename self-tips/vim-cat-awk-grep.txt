@@ -52,7 +52,7 @@ i2进制显示binary文件： vim打开后:%!xxd -b
 忽略大小写： :set ic (:set ignorecase)
 大小写敏感: :set noic
 vim中显示当前文件的路径及名称: control + G
-只匹配词尾： /int\> 
+只匹配词尾： /int\>
 只匹配词头：\< int
 全词匹配： /\< int\>
 统计关键词个数： :%s/pattern/&/g 　& 代表的意思就是用来表示前面比对的字串，所以做这个指令其实对档案本身并不会有什麽改变。但是由於做的是全域的取代置换， vim 会告诉你有从多少行中多少个字串被取代。
@@ -92,5 +92,8 @@ awk的时候使用:分隔符 awk -F:
 awk的时候使用tab分隔符 awk -F'\t'
 awk某个文件  awk -f filename
 
+
+grep:
+排除某些文件夹: grep --exclude-dir
 
 
