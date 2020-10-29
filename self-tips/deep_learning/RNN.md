@@ -11,7 +11,8 @@ $$
 $$
 L(\{x^{(1)},\dots, x^{(t)}\},\{y^{(1)},\dots,y^{(\tau)}\}) \\
 =\sum_t(L^{(t)}) \\
-=-\sum_tlogp_{model}(y^{(t)} | x^{(1)},\dots,x^{(t)})
+=-\sum_tlogp_{model}(y^{(t)} | x^{(1)},\dots,x^{(t)})\\
+L^{(t)}=logp_{model}(y^{(t)}| \{x^{(1)},\dots \dots,x^{(t)}\})
 $$
 
 
