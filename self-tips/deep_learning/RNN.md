@@ -15,4 +15,11 @@ L(\{x^{(1)},\dots, x^{(t)}\},\{y^{(1)},\dots,y^{(\tau)}\}) \\
 L^{(t)}=logp_{model}(y^{(t)}| \{x^{(1)},\dots \dots,x^{(t)}\})
 $$
 
-
+循环神经网络的计算方法是多层循环网络的推广，不需要特殊的算法以，由反向传播计算得到的梯度，并结合任何通用的基于梯度的技术就可训练RNN。
+$$
+\frac {\partial{L}} {\partial{L^{(t)}}} = 1
+$$
+在这个导数中，假设输出$o^{(t)}$作为sofmax函数的参数，我们可以从softmax函数可以获得关于输出概率的向量$\hat{y}$。假设损失是迄今为止给定了输入后的真实目标$y^{(t)}$的负对数似然。对于所有的$i$,$t$,关于时间步的输入梯度$\nabla_{o^{(t)}}L$如下：
+$$
+(\nabla_{o^{(t)}}L)_{i} = \frac {\partial{L}} {\partial{o_{i}^{(t)}}} = \frac {\partial{L}} {\partial{L^{(t)}}} \frac {\partial{L^{(t)}}} {\partial{o_{i}^{(t)}}} = \hat{y}_{i}^{(t)} - 1_{i,y^{(t)}}
+$$
