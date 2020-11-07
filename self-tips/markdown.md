@@ -162,5 +162,6 @@ T 	T 	τ 	\tau
 X 	X 	χ 	\chi
 Ψ 	\Psi 	ψ 	\psi
 Ω 	\v 	ω 	\omega
+            \nabla
 
 

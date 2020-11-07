@@ -138,32 +138,31 @@
 
 ## 希腊字母
 
-| 字母 | 实现       | 字母 | 实现       |
-| ---- | ---------- | ---- | ---------- |
-| A    | `A`        | α    | `\alhpa`   |
-| B    | `B`        | β    | `\beta`    |
-| Γ    | `\Gamma`   | γ    | `\gamma`   |
-| Δ    | `\Delta`   | δ    | `\delta`   |
-| E    | `E`        | ϵ    | `\epsilon` |
-| Z    | `Z`        | ζ    | `\zeta`    |
-| H    | `H`        | η    | `\eta`     |
-| Θ    | `\Theta`   | θ    | `\theta`   |
-| I    | `I`        | ι    | `\iota`    |
-| K    | `K`        | κ    | `\kappa`   |
-| Λ    | `\Lambda`  | λ    | `\lambda`  |
-| M    | `M`        | μ    | `\mu`      |
-| N    | `N`        | ν    | `\nu`      |
-| Ξ    | `\Xi`      | ξ    | `\xi`      |
-| O    | `O`        | ο    | `\omicron` |
-| Π    | `\Pi`      | π    | `\pi`      |
-| P    | `P`        | ρ    | `\rho`     |
-| Σ    | `\Sigma`   | σ    | `\sigma`   |
-| T    | `T`        | τ    | `\tau`     |
-| Υ    | `\Upsilon` | υ    | `\upsilon` |
-| Φ    | `\Phi`     | ϕ    | `\phi`     |
-| X    | `X`        | χ    | `\chi`     |
-| Ψ    | `\Psi`     | ψ    | `\psi`     |
-| Ω    | `\v`       | ω    | `\omega`   |
-
-
+| 字母 | 实现       | 字母     | 实现       |
+| ---- | ---------- | -------- | ---------- |
+| A    | `A`        | α        | `\alhpa`   |
+| B    | `B`        | β        | `\beta`    |
+| Γ    | `\Gamma`   | γ        | `\gamma`   |
+| Δ    | `\Delta`   | δ        | `\delta`   |
+| E    | `E`        | ϵ        | `\epsilon` |
+| Z    | `Z`        | ζ        | `\zeta`    |
+| H    | `H`        | η        | `\eta`     |
+| Θ    | `\Theta`   | θ        | `\theta`   |
+| I    | `I`        | ι        | `\iota`    |
+| K    | `K`        | κ        | `\kappa`   |
+| Λ    | `\Lambda`  | λ        | `\lambda`  |
+| M    | `M`        | μ        | `\mu`      |
+| N    | `N`        | ν        | `\nu`      |
+| Ξ    | `\Xi`      | ξ        | `\xi`      |
+| O    | `O`        | ο        | `\omicron` |
+| Π    | `\Pi`      | π        | `\pi`      |
+| P    | `P`        | ρ        | `\rho`     |
+| Σ    | `\Sigma`   | σ        | `\sigma`   |
+| T    | `T`        | τ        | `\tau`     |
+| Υ    | `\Upsilon` | υ        | `\upsilon` |
+| Φ    | `\Phi`     | ϕ        | `\phi`     |
+| X    | `X`        | χ        | `\chi`     |
+| Ψ    | `\Psi`     | ψ        | `\psi`     |
+| Ω    | `\v`       | ω        | `\omega`   |
+|      |            | $\nabla$ | \nabla     |
 
