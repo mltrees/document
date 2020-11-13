@@ -1,3 +1,11 @@
 连接hive: hive
 查看表的细节: desc app.jd_app_click_quality_feature_user_sku
 查看表的几个内容: hadoop fs -cat /user/recsys/recpro/unifiedfeed/itemprofile/customlist_hmzj_fea_c/000000_0 | head -n 10
+下载表： hadoop fs -get hdfs://ns1013/user/recsys/recpro/yuanwenwu3/model/dnn_id_dense_img_615_32_v1126/dnn_id_dense_img_615_32_v1126_save_sku_img_model.model/frozen/ ./
+查看表内数据大小 hadoop fs -checksum hdfs://ns1013/user/recsys/recpro/unifiedfeed/itemprofilejoin/frame_img/202011121719/000000_0
+查看文件大小： hadoop fs -du -h /t_user/my_hive_db/my_hive_table_test01
+查看文件行数: hadoop fs -du -s /t_user/my_hive_db/my_hive_table_test01
+
+
+
+查询某个表的几个字段: hive -e "select sku,title from app.p_sku_to_warefull_detail where sku='583418';"

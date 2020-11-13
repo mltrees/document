@@ -41,6 +41,7 @@ git checkout develop && git merge feature/login 将feature/login的分支merge到deve
 git blame <filename>	查看某文件最后修改提交的日子
 git log -n 1 --stat	查看最近一次提交所有更改过的文件
 git log -p filename 查看某一件的所有历史提交
+git log --graph --oneline 一行查看git log，同时查看分支的合并情况
 git diff HEAD^ -- filename 查看文件与上一版本的修改	
 git add -u  git add -u 提交被修改(modified)和被删除(deleted)文件(不包括新文件)
 
