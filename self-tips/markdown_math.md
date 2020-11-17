@@ -166,3 +166,11 @@
 | Ω    | `\v`       | ω        | `\omega`   |
 |      |            | $\nabla$ | \nabla     |
 
+$ 多行公式对齐
+$$
+\begin{aligned}
+H(p) &= -0.9\times log0.9 - 0.05 \times log0.05 - 0.02 \times log0.02 -0.03 \times log0.03 \\
+&= 0.041 + 0.065 + 0.034 + 0.046 \\
+&= 0.086
+\end{aligned}
+$$
