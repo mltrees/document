@@ -8,4 +8,5 @@
 
 
 
-查询某个表的几个字段: hive -e "select sku,title from app.p_sku_to_warefull_detail where sku='583418';"
+查询某个表的几个字段: hive -e "select sku,title from app.p_sku_to_warefull_detail_lastday where sku='583418';"
+查看.lzo文件: hadoop fs -text hdfs://ns1000/user/jrdw/rbdm.db/dbproxy_MissingKey/dt=2020-11-24/ht=00/00-55-2-1606150500157--125666697.lzo | head -n 1
