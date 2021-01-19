@@ -5,6 +5,7 @@
 查看表内数据大小 hadoop fs -checksum hdfs://ns1013/user/recsys/recpro/unifiedfeed/itemprofilejoin/frame_img/202011121719/000000_0
 查看文件大小： hadoop fs -du -h /t_user/my_hive_db/my_hive_table_test01
 查看文件行数: hadoop fs -du -s /t_user/my_hive_db/my_hive_table_test01
+上传文件: hadoop fs -put rst30.txt /user/recsys/recpro/unifiedfeed/iteminfo/detaildiff/202012310000
 
 
 

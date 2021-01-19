@@ -96,10 +96,19 @@ ctags:
 awk的时候使用:分隔符 awk -F:
 awk的时候使用tab分隔符 awk -F'\t'
 awk某个文件  awk -f filename
+awk以SOH分隔符分离 awk -F"\001" '{print $1}'
 
 
 grep:
 排除某些文件夹: grep --exclude-dir
+不区分大小写: grep -i
 
+
+macos ctags:
+brew install ctags
+alias ctags="`brew --prefix`/bin/ctags"
+alias ctags >> ~/.bashrc
+echo "set tags=tags" >> ~/.vimrc
+ctags -R .
 
 
