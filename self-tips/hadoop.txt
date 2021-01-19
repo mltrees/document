@@ -11,3 +11,6 @@
 
 查询某个表的几个字段: hive -e "select sku,title from app.p_sku_to_warefull_detail_lastday where sku='583418';"
 查看.lzo文件: hadoop fs -text hdfs://ns1000/user/jrdw/rbdm.db/dbproxy_MissingKey/dt=2020-11-24/ht=00/00-55-2-1606150500157--125666697.lzo | head -n 1
+
+hive run
+hive -e "select user_log_acct,item_sku_id as skuid,request_tm from app.behavior_order_new where dt='2021-01-18' and flag = 1 and item_sku_id is not null and user_log_acct is not null group by user_log_acct,request_tm,item_sku_id" &> order_data.txt
