@@ -1,0 +1,60 @@
+jvm相关：
+1、jvm内存模型：堆、栈、程序计数器、方法区、直接内存；jdk8的区别：去永久代策略：使用元数据空间（直接内存）替代永久代（存放类、方法和常量等）
+2、GC的回收算法：标记清除、标记整理、复制、分代收集；CMS算法的流程
+3、jmm相关：同步处理的几种方式（volatile、synchronized、lock、reentrantLock）；volatile关键字的原理（读取前必须从内存中获取，更新后必须写入内存，操作顺序无法重排）；
+4、jvm调优：fullGC的原因和排查方法；jvm参数：xmx、xms、XX:MaxDirectMemorySize
+
+java语法相关：
+1、线程池：ThreadPoolExecutor创建时需要注意的地方；ScheduledThreadPool的scheduleWithFixedDelay和scheduleAtFixedRate的区别；forkjoin pool的使用
+2、并发处理：concurrent包：ConcurrentSkipListMap和ConcurrentHashMap的区别和性能差别；CopyOnWriteArrayList的写机制；实现一个有序的并发map的方法
+3、实现线程安全的集中方法：synchronized、lock、volatile、reentrantLock，各个应用的不同场景
+4、lamda表达式的使用：介绍至少三个jdk提供的函数式接口（function，Predicate，consumer等）；stream处理中map和flatmap的区别
+5、future的使用：如何通过future的使用提高代码处理能力；CompletableFuture的使用场景
+6、NIO的原理和特性
+
+框架构件使用：
+spring：
+1、BI的概念，使用spring的目的
+2、beanfactory和factorybean的区别
+3、aop 概念，目的，一般实现aop的技术：静态代理和动态代理的区别；
+4、ioc 概念和目的，举一个ioc设计的例子
+
+kafka：
+1、解释consumer group的概念
+2、解释partition概念
+3、描述一条消息的生产消费过程：是否提到主副本同步、commit offset
+4、如何保证消息有序（一定程度内有序）
+
+zk：
+1、zk数据存储结构
+2、zk一致性
+
+数据库：
+1、ACID解释：原子性、隔离性、一致性、持久性
+2、数据库的隔离级别，一般选哪个级别（读未提交--脏读、读提交、可重复读、串行）
+3、悲观锁（共享锁、排他锁）和乐观锁（使用版本号或者时间戳）
+
+扩展知识：
+设计模式：
+1、举三个设计模式并说明：如果提到工厂模式，说明工厂模式的几种不同使用方法（加分项），提到非工厂、单例则加分
+
+分布式一致性算法：
+1、通用的刚性事务：两阶段提交、多版本控制、协商机制（paxos）
+2、柔性事务的实现：补偿、信任站点（以某方为准）、数据合并（根据时间戳）
+3、zk的一致性算法
+
+
+工作状态：
+1、对自己的评价：优势、劣势等
+2、描述自己工作内容：是否清晰，是否能说清楚
+3、描述自己工作的系统拓扑：是否有关注过还是只了解业务流程，是否能描述清晰系统边界，能否从物理拓扑和逻辑拓扑两方面入手描述
+
+
+代码能力：
+必须写一个递归一个循环
+1、写堆排：
+a、获取最后一个非叶子节点的逻辑是否对：length / 2 -1
+b、获取左右子树是否对：i * 2 + 1
+2、写快排
+
+

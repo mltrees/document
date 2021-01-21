@@ -1,0 +1,1 @@
+安装在指定目录: cmake .. -DCMAKE_INSTALL_PREFIX=/Users/zhangmaolin/usr/local
