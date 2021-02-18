@@ -1,3 +1,6 @@
+熟练使用常用的java集合类以及常用的集合的源码,熟悉多线程以及容器，AQS,CAS,lock,volatilte,synchronized理解和使用
+具有扎实的java编程基础，对面向对象编程有深刻的理解，熟悉掌握javaI/O流、集合、多线程、反射、泛型、注解等基础开发技术
+
 
 1、java垃圾回收算法
 https://www.jianshu.com/p/114bf4d9e59e
@@ -46,6 +49,7 @@ volatile：
 
 7、synchronized锁优化的方式
 https://juejin.im/entry/5acde01a51882555867fc924
+
 
 
 
