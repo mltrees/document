@@ -69,3 +69,6 @@ If you prefer the top row of keys to always behave as standard function keys wit
     Select "Use all F1, F2, etc. keys as standard function keys"
 
 修改状态栏位置（程序坞）
+
+
+报错:  command not found: greadlink: 解决方案： brew install coreutils

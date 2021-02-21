@@ -95,4 +95,7 @@ IDEA Error:java: Compilation failed: internal java compiler error: 解决方法�
 代码内import的时候类名是全名： Editor->Code Style->Java,选择import选项卡，不勾选Use Full qualified class name
 防止多个import合并成*: Setting->Code Stype->Java 选择Class count to use import with "*" 数值大一些
 
+#fastjson
+使用解析类时，变量名需与json中名字一致。如果json中带".",变量名默认忽略，其它字母采用驼峰命名法
+
 

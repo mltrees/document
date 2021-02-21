@@ -14,3 +14,6 @@
 
 hive run
 hive -e "select user_log_acct,item_sku_id as skuid,request_tm from app.behavior_order_new where dt='2021-01-18' and flag = 1 and item_sku_id is not null and user_log_acct is not null group by user_log_acct,request_tm,item_sku_id" &> order_data.txt
+
+hive
+show partitions tmpr.wcy_fugou_order_jd_app;  // 看表的时间

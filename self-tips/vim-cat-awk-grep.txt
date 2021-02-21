@@ -48,6 +48,7 @@ i2进制显示binary文件： vim打开后:%!xxd -b
 :.,+2s/foo/bar/g
 查看进程内的线程：ps -T -p pid, top -H -p pid 可查看各个线程占用的资源
 替换某行的所有内容:%s/aaa/bbb/e
+替换从开头到指定字符的内容:  %s/^.*path= //g
 将某文本内的行按ascii码排序： sort file
 忽略大小写： :set ic (:set ignorecase)
 大小写敏感: :set noic
