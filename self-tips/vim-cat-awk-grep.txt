@@ -75,8 +75,10 @@ mac使用find和sed： find ./ -type f -exec sed -i '' -e "s/192.168.20.1/new.do
 
 sed清除行尾空格: sed -i '' -e "s/[ \t]*$//"
 删除行头空格键和tab键: sed 's/^[ \t]*//g' (^[  \t]，是以空格或者tab键开头；与【^】不同，【^】是匹配除【^字符】之外的任意字符，例如5【^12】，匹配50、53、54，但是不匹配51和52)
+sed在指定行后增加内容 sed -i "N;6a\ \ \"time_format_value\":1,/" (N;6a 代表在指定第6行后增加内容)
 
 set 当替换的内容有/时，需要使用sed "s#find#$REPLACE#"
+
 
 格式化json: :%!python -m json.tool
 .h,.cpp互相切换： :e %:r.cpp
