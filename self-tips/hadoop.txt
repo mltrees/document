@@ -17,3 +17,10 @@ hive -e "select user_log_acct,item_sku_id as skuid,request_tm from app.behavior_
 
 hive
 show partitions tmpr.wcy_fugou_order_jd_app;  // 看表的时间
+
+
+## tips
+order by 全局排序（数据倾斜）
+sort by 局部排序
+指定表分隔符：fields terminated by '\t'
+truncate： 表数据删除， 保持表及metadata完整

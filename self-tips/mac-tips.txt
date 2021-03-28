@@ -42,7 +42,7 @@ finder(访达):
 当前目录下所有文件夹的大小 -d 指深度，后面加一个数值 du -d 1 -h
 鼠标键打开和关闭: 连按5次option
 
-
+改为以root格式登陆: sudo -s
 
 
 
@@ -54,6 +54,10 @@ brew install wget --with-libressl
 install thrift-0.10.0
 brew unlink thrift
 brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/16ebe5f1843e6cb54856311ff0f676be53007329/Formula/thrift.rb
+
+
+install gnu-sed
+brew install gnu-sed
 
 
 

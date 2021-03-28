@@ -60,6 +60,9 @@ vim中显示当前文件的路径及名称: control + G
 
 
 以二进制打开文件: vim -b filename, 以16进制显示： :set display=uhex
+vim显示不可见字符: :set invlist
+隐藏不可见字符: :set nolist
+可见不可见切换: :set list!
 
 
 linux文本处理相关命令：
@@ -86,6 +89,8 @@ set 当替换的内容有/时，需要使用sed "s#find#$REPLACE#"
 vim替换soh分隔符（显示为^A）：直接搜索^A搜不到，需要control+v, 再control+A得到该符号
 字符串查找时，”\n” 是换行，”\r” 是回车，也就是经常会看到的 ^M（备注-1）。
 字符串替换时，”\r” 是换行，’\n” 是空字符（0×00）。
+vim下行内排序:%sort
+查看文件格式: set ff
 
 
 ctags:

@@ -73,6 +73,7 @@ jd 版本提交
 git push origin test:master         // 提交本地test分支作为远程的master分支
 删除origin/zml-dev： git push --delete origin zml-dev
 将本地的删除操作上传 git add --all .
+pull远端指定的分支: git pull origin ctTest
 git查看远程网址:git remote -v
 git update本地fork出来的分支：
     git remote add upstream https://github.com/whoever/whatever.git

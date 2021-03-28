@@ -237,6 +237,7 @@ fg 1 回到前台支持
 转到jobs中的命令: fg 1(1为序号)
 
 
+
 /etc/sysctl.conf 可修改core_pattern的设置，修改kernel.core_pattern = /export/App/tensorflows/core_tfs_%p_%s_%t 然后 sudo sysctl -p
 查看shell执行细节 执行时增加-x或文件头修改为#!/bin/bash -x
 不解包查看tar包内的文件：  tar -tvf model.tar.gz
@@ -252,6 +253,8 @@ unrar e a.rar 解压a.rar
 按文件大小排列： ls -Slrh， 升序是ls -Slrh
 按文件夹包含文件大小排列： du . --max-depth=1 -h | sort -rh
 format unix时间: date -d @1282368345 "+%Y-%m-%d %H:%M:%S" (macos: date -r 1282368345 +"%Y-%m-%d %H:%M:%S")
+获取今天是第几天: date +%j
+获取当前unix时间: date +%s
 
 
 
