@@ -2,7 +2,7 @@
 最大化不全屏 option+shift+最大化
 修改default shell chsh -s /bin/zsh
 最小化： command + Option + M
-最大化： command + control + f, 
+最大化： command + control + f,
 全屏: terminal2(command+enter)
 锁屏： control + shift + power
 pageup: fn+向上箭头
@@ -43,6 +43,8 @@ finder(访达):
 鼠标键打开和关闭: 连按5次option
 
 改为以root格式登陆: sudo -s
+剪切： command+c 后, option+command+v，即实现文件剪切
+
 
 
 
