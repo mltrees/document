@@ -14,6 +14,10 @@ tips:
 离线导数看log
 1. 点击任务图标，再点击 “任务运行”, 找到log url，使用 jd proxy， 打开log url，看到log
 
+强制执行:
+run-feedMr.sh -T iteminfo-sku_stock.properties -e force.run=true
+
+recpro加载hadoop需要的环境变量: source .bashrc
 
 todo:
 1. 发布的时候，各个配置应该显式看到

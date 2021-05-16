@@ -91,6 +91,9 @@ vim替换soh分隔符（显示为^A）：直接搜索^A搜不到，需要control
 字符串替换时，”\r” 是换行，’\n” 是空字符（0×00）。
 vim下行内排序:%sort
 查看文件格式: set ff
+vim中排序并去重: sort u
+vim中各分隔样例的输出： :help digraph-table(SOH是^A, TAB是^I)
+
 
 
 ctags:
