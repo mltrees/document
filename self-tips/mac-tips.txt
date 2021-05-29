@@ -78,3 +78,4 @@ If you prefer the top row of keys to always behave as standard function keys wit
 
 
 报错:  command not found: greadlink: 解决方案： brew install coreutils
+关闭Gatekeeper(解决macOS无法验证此App不包含恶意软件的问题)  sudo spctl --master-disable
