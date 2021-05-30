@@ -1,1 +1,6 @@
 安装在指定目录: cmake .. -DCMAKE_INSTALL_PREFIX=/Users/zhangmaolin/usr/local
+cmake增加gdb调试:
+CMakeLists.txt 增加
+SET(CMAKE_BUILD_TYPE "Debug")
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")

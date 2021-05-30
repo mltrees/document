@@ -240,6 +240,8 @@ fg 1 回到前台支持
 查看系统负载: uptime (输出为： 16:11:29 up 1291 days, 2 min,  0 users,  load average: 14.34, 14.88, 15.21)意思是16:11分启动，共启动了1291天，后面3个值是1分、5分、15分钟的系统负载
 查看系统负载2： top，  看 load average的项目
 查看kill后各个数字代表的信息含义: man 7 signal（常用 kill -9 杀死进程；kill -19 hang住进程; kill -18 继续被kill -19 hang住的进程）
+查看是64位还是32位 sudo uname -m (x86_64是64位的)
+查看内存条配置: sudo dmidecode -t memory
 
 
 
