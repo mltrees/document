@@ -1,0 +1,16 @@
+# 主要思路
+1. internal_vertex_run 内部vertex调用
+2. vertex activate时，会将dependency activate.activate是将vertex加入待运行。然后invoke唤起执行。
+
+# question
+1. 数据同步是怎么做的，data->active是啥意思, 当前graph发布是何意思？
+2. 图如何生成，如何使用
+3. 图reset后是否可以复用？
+
+
+# tips
+1. vertex 在激活时，会将所有的dependence都active了
+2. vertex run之前，需要先active
+2. 每次请求，都需要新建一个图，然后确定图依赖？
+
+
