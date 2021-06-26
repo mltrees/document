@@ -3,6 +3,7 @@ python2中的print与python3一致:  from __future__ import print_function
 入参解析: from optparse import OptionParser
 
 
+
 python输入object是什么格式?
 
 
